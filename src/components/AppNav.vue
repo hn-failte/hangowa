@@ -1,7 +1,7 @@
 <template>
 	<ul class="navbar">
 		<router-link v-for="(item, index) in navList" tag="li" :to="item.url" :key="index">
-			<p v-html="item.icon"></p>
+			<p class="iconfont" v-html="item.icon"></p>
 			<p>{{item.desc}}</p>
 		</router-link>
 	</ul>
@@ -15,17 +15,17 @@ export default {
 			navList: [
 				{
 					desc: "首页",
-					icon: "icon",
+					icon: "&#xe72b;",
 					url: "index"
 				},
 				{
 					desc: "发现",
-					icon: "icon",
+					icon: "&#xe643;",
 					url: "discover"
 				},
 				{
 					desc: "我的商城",
-					icon: "icon",
+					icon: "&#xe630;",
 					url: "my"
 				}
 			]
