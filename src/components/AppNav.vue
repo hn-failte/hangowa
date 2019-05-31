@@ -35,24 +35,23 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-	.navbar
-		position: fixed
-		bottom: 0
-		left: 0
-		width: 100%
-		display: flex
-		height: 1rem
-		background: rgba(102,102,102,.5)
-		li
-			flex: 1
-			&>p
-				&:first-of-type
-					height: .6rem
-					line-height: .6rem
-				&:last-of-type
-					height: .4rem
-					line-height: .4rem
-
-				
-
+.navbar
+	position: fixed
+	bottom: 0
+	left: 0
+	width: 100%
+	display: flex
+	height: 1rem
+	background: rgba(102,102,102,.8)
+	li
+		flex: 1
+		&>p
+			&:first-of-type
+				height: .6rem
+				line-height: .6rem
+				color: #ccc
+			&:last-of-type
+				height: .4rem
+				line-height: .4rem
+				color: #fff
 </style>
