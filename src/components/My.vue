@@ -3,11 +3,11 @@
         <div class="mallTop">
             <div class="mallTopBg">
                 <div class="trans">
-                    <span class="iconfont icon-gouwuche"></span>
+                    <span class="iconfont icon-shezhi"></span>
                     <span class="iconfont icon-gengduo"></span>
                 </div>
                 <div class="login">
-                    <span class="iconfont icon-wo"></span>
+                    <router-link to="./login" class="iconfont icon-wo" tag='span'></router-link>
                     <span class="loginDij">点击登录</span>
                 </div>
                 <div class="collection">
@@ -31,7 +31,7 @@
                 <dt>
                     <a href="#">
                         <h2>我的订单</h2>
-                        <h3>查看全部订单</h3>
+                        <h3>查看全部订单<span class="iconfont icon-jiantou"></span></h3>
                     </a>
                 </dt>
                 <dd>
@@ -61,36 +61,58 @@
                 <dt>
                     <a href="#">
                         <h2>我的财产</h2>
-                        <h3>查看全部财产</h3>
+                        <h3>查看全部财产<span class="iconfont icon-jiantou"></span></h3>
                     </a>
                 </dt>
             </dl>
             <dl class="mainSales">
                 <dt>
                     <a href="#">
-                        <h2>我的财产</h2>
-                        <h3>查看全部财产</h3>
+                        <h2>我的分销管理</h2>
+                        <span class="iconfont icon-jiantou"></span>
                     </a>
                 </dt>
             </dl>
             <dl class="mainAddress">
                 <dt>
                     <a href="#">
-                        <h2>我的财产</h2>
-                        <h3>查看全部财产</h3>
+                        <h2>收货地址管理</h2>
+                        <span class="iconfont icon-jiantou"></span>
                     </a>
                 </dt>
             </dl>
             <dl class="mainSet">
                 <dt>
                     <a href="#">
-                        <h2>我的财产</h2>
-                        <h3>查看全部财产</h3>
+                        <h2>用户设置</h2>
+                        <span class="iconfont icon-jiantou"></span>
                     </a>
                 </dt>
             </dl>
         </div>
-        <div class="mallBottom"></div>
+        <div class="mallBottom">
+            <div class="navText">
+                <a href="#">登录</a>|
+                <a href="#">注册</a>|
+                <a href="#">反馈</a>|
+                <a href="#">返回顶部</a>
+            </div>
+            <div class="navPhoto">
+                <dl>
+                    <dt class="iconfont icon-bangzhushouji"></dt>
+                    <dd>客户端</dd>
+                </dl>
+                <dl>
+                    <dt class="iconfont icon-bangzhushouji iconCenter"></dt>
+                    <dd>触屏版</dd>
+                </dl>
+                <dl>
+                    <dt class="iconfont icon-bangzhushouji"></dt>
+                    <dd>电脑版</dd>
+                </dl>
+            </div>
+            <div class="copyRight">Copyright © 2014-2016 汉购网hangowa.com版权所有</div>
+        </div>
     </div>
 </template>
 
@@ -180,7 +202,7 @@ export default {
                     height: 0.44rem;
                     margin-left: 0.22rem;
                     padding: 0.22rem 0.3rem 0.22rem 0;
-                    border-bottom: 0.01rem solid black;
+                    border-bottom: 0.01rem solid #eee;
                     a{
                         display: flex;
                         height: 0.44rem;
@@ -188,9 +210,11 @@ export default {
                         align-items: center;
                         h2{
                             font-size: 0.34rem;
+                            color: #111;
                         }
                         h3{
                             font-size: 0.25rem;
+                            color: #999;
                         }
                     }
                 }
@@ -203,9 +227,11 @@ export default {
                         flex-direction: column;
                         .iconfont{
                             font-size: 0.5rem;
+                            color: #888;
                         }
                         .consp{
-                            font-size: 0.3rem;
+                            color: #888;
+                            font-size: 0.28rem;
                         }
                     }
                 }
@@ -218,7 +244,7 @@ export default {
                     height: 0.44rem;
                     margin-left: 0.22rem;
                     padding: 0.22rem 0.3rem 0.22rem 0;
-                    border-bottom: 0.01rem solid black;
+                    border-bottom: 0.01rem solid rgb(230, 230, 230);
                     a{
                         display: flex;
                         height: 0.44rem;
@@ -226,9 +252,11 @@ export default {
                         align-items: center;
                         h2{
                             font-size: 0.34rem;
+                            color: #111;
                         }
                         h3{
                             font-size: 0.25rem;
+                            color: #999;
                         }
                     }
                 }
@@ -237,7 +265,7 @@ export default {
                 height: 0.88rem;
                 margin-top: 0.22rem;
                 background: white;
-                border-bottom: 0.01rem solid black; 
+                border-bottom: 0.01rem solid rgb(230, 230, 230); 
                 dt{
                     height: 0.44rem;
                     margin-left: 0.22rem;
@@ -249,16 +277,18 @@ export default {
                         align-items: center;
                         h2{
                             font-size: 0.34rem;
+                            color: #111;
                         }
                         h3{
                             font-size: 0.25rem;
+                            color: white;
                         }
                     }
                 }
             }
             .mainAddress{
                 height: 0.88rem;
-                border-bottom: 0.01rem solid black; 
+                border-bottom: 0.01rem solid rgb(230, 230, 230); 
                 background: white;
                 dt{
                     height: 0.44rem;
@@ -271,16 +301,18 @@ export default {
                         align-items: center;
                         h2{
                             font-size: 0.34rem;
+                            color: #111;
                         }
                         h3{
                             font-size: 0.25rem;
+                            color: white;
                         }
                     }
                 }
             }
             .mainSet{
                 height: 0.88rem;
-                border-bottom: 0.01rem solid black; 
+                border-bottom: 0.01rem solid rgb(230, 230, 230); 
                 background: white;
                 dt{
                     height: 0.44rem;
@@ -293,17 +325,58 @@ export default {
                         align-items: center;
                         h2{
                             font-size: 0.34rem;
+                            color: #111;
                         }
                         h3{
                             font-size: 0.25rem;
+                            color: white;
                         }
                     }
                 }
             }
         }
         .mallBottom{
-            height: 2.83rem;
-            background: pink;
+            // height: 2.83rem;
+            height: 4.0rem;
+            // background: pink;
+            .navText{
+                padding: 0.26rem;
+                background: white;
+                display: flex;
+                justify-content: space-around;
+                a{
+                    color: #111;
+                }
+            }
+            .navPhoto{
+                background: white;
+                padding: 0.13rem 0.88rem;
+                height: 1rem;
+                display: flex;
+                justify-content: space-between;
+                border-top: 0.01rem solid rgb(230, 230, 230);
+                border-bottom: 0.01rem solid rgb(230, 230, 230);
+                dl{
+                    width: 1.70rem;
+                    .iconCenter{
+                        color: #555;
+                    }
+                    dt{
+                        font-size: 0.6rem;
+                        color: #999;
+                    }
+                    dd{
+                        font-size: 0.23rem;
+                        color: #999;
+                    }
+                }
+            }
+            .copyRight{
+                background: white;
+                font-size: 0.23rem;
+                padding: 0.29rem 0;
+                color: #555;
+            }
         }
     }
 </style>
