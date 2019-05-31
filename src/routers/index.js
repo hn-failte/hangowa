@@ -12,17 +12,17 @@ export default new Router({
     {
       path: '/index',
       name: "index",
-      component: ()=>import("./components/Index.vue")
+      component: ()=>import("../components/Index.vue")
     },
     {
       path: '/discover',
       name: "discover",
-      component: ()=>import("./components/Discover.vue")
+      component: ()=>import("../components/Discover.vue")
     },
     {
       path: '/my',
       name: "my",
-      component: ()=>import("./components/My.vue")
+      component: ()=>import("../components/My.vue")
     },
     {
       path: "**",
