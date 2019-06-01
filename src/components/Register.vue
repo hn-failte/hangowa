@@ -18,7 +18,7 @@
                 <label for="">确认密码:</label>
                 <input type="password">
             </div>
-            <div class="denl">登录</div>
+            <div class="denl">注册</div>
         </div>
     </div>
 </template>
@@ -45,7 +45,7 @@
             }
         }
         .logInput{
-            height: 4rem;
+            height: 5rem;
             background: pink;
             display: flex;
             flex-direction: column;
