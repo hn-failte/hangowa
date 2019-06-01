@@ -9,19 +9,19 @@
       <ul class="footer-middle">
         <li>
           <p>
-            <img src="../../assets/discover/foot_app.png">
+            <img src="@assets/discover/foot_app.png">
           </p>
           <p>客户端</p>
         </li>
         <li>
           <p>
-            <img src="../../assets/discover/foot_touch.png">
+            <img src="@assets/discover/foot_touch.png">
           </p>
           <p>触屏版</p>
         </li>
         <li>
           <p>
-            <img src="../../assets/discover/foot_pc.png">
+            <img src="@assets/discover/foot_pc.png">
           </p>
           <p>电脑端</p>
         </li>
@@ -31,6 +31,8 @@
 </template>
 
 <script>
+import Vuex from "vuex"
+
 export default {
     name: "DiscoverFooter"
 }

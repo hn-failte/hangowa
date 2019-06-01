@@ -3,23 +3,23 @@
         <h3>精选专题商品</h3>
         <ul class="main-body">
             <li class="contents">
-                <img src="../../assets/discover/main-shopping-1.jpg">
+                <img src="@assets/discover/main-shopping-1.jpg">
                 <p>洋溪蜜柚2个装 共6斤左右 新鲜时令水果</p>
             </li>
             <li class="contents">
-                <img src="../../assets/discover/main-shopping-1.jpg">
+                <img src="@assets/discover/main-shopping-1.jpg">
                 <p>洋溪蜜柚2个装 共6斤左右 新鲜时令水果</p>
             </li>
             <li class="contents">
-                <img src="../../assets/discover/main-shopping-1.jpg">
+                <img src="@assets/discover/main-shopping-1.jpg">
                 <p>洋溪蜜柚2个装 共6斤左右 新鲜时令水果</p>
             </li>
             <li class="contents">
-                <img src="../../assets/discover/main-shopping-1.jpg">
+                <img src="@assets/discover/main-shopping-1.jpg">
                 <p>洋溪蜜柚2个装 共6斤左右 新鲜时令水果</p>
             </li>
             <li class="contents">
-                <img src="../../assets/discover/main-shopping-1.jpg">
+                <img src="@assets/discover/main-shopping-1.jpg">
                 <p>洋溪蜜柚2个装 共6斤左右 新鲜时令水果</p>
             </li>
         </ul>
@@ -27,8 +27,15 @@
 </template>
 
 <script>
+import Vuex from "vuex"
+
 export default {
-    name: "DiscoverMain"
+    name: "DiscoverMain",
+    computed: {
+        ...Vuex.mapState({
+            //
+        })
+    }
 }
 </script>
 
