@@ -1,24 +1,24 @@
 <template>
     <div>
-        <header>
-            <ul>
-                <li><img src="../assets/home_logo.png"></li>
-                <li><input type="text"></li>
-                <li></li>
-            </ul>
-        </header>
+        <IndexHeader></IndexHeader>
+        <IndexLunbo></IndexLunbo>
+        <IndexPicbtn></IndexPicbtn>
+        <IndexAd></IndexAd>
     </div>
 </template>
 
 <script>
 export default {
     name: "Index",
-    
+    components: {
+        IndexHeader: ()=>import("./IndexChildren/IndexHeader.vue"),
+        IndexLunbo: ()=>import("./IndexChildren/IndexLunbo.vue"),
+        IndexPicbtn: ()=>import("./IndexChildren/IndexPicbtn.vue"),
+        IndexAd: ()=>import("./IndexChildren/IndexAd.vue"),
+    }
 }
 </script>
 
 <style lang="scss" scoped>
-    div>header>ul{
-        display: flex;
-    }
+    
 </style>
