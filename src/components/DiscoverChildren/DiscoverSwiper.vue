@@ -1,8 +1,8 @@
 <template>
   <swiper :options="swiperOption" ref="mySwiper" @touchEnd="play">
-    <img class="swiper-slide" src="../../assets/discover/s1_1.jpg">
-    <img class="swiper-slide" src="../../assets/discover/s1_1.jpg">
-    <img class="swiper-slide" src="../../assets/discover/s1_1.jpg">
+    <img class="swiper-slide" @click="doalert" src="../../assets/discover/s1_1.jpg">
+    <img class="swiper-slide" @click="doalert" src="../../assets/discover/s1_1.jpg">
+    <img class="swiper-slide" @click="doalert" src="../../assets/discover/s1_1.jpg">
     <div class="swiper-pagination" slot="pagination"></div>
     <div class="swiper-button-prev" slot="button-prev" @click="prev"></div>
     <div class="swiper-button-next" slot="button-next" @click="next"></div>
@@ -19,6 +19,7 @@ export default {
   name: "DiscoverSwiper",
   components: {
     swiper,
+    // eslint-disable-next-line
     swiperSlide
   },
   computed: {
@@ -67,17 +68,24 @@ export default {
     },
     next() {
       this.swiper.slideNext();
+    },
+    doalert(){
+      alert(1)
     }
   }
 };
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
     .swiper-container
+      z-index: -3
       width: 100%
-      margin-top: 1.5rem
+      margin-top: 1rem
       height: 3rem
-    .swiper-slide
+      .swiper-wrapper
+        z-index: -2
+        .swiper-slide
+          z-index: -1
         //
     
 </style>

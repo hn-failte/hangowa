@@ -30,7 +30,7 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 section
     width: 100%
     height: 4.2rem

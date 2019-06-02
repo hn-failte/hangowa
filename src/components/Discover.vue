@@ -36,4 +36,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+div
+  position: relative
+  z-index: -5
 </style>

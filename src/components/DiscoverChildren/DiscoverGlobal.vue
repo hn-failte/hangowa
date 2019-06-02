@@ -39,7 +39,7 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 main
     width: 100%
     h3

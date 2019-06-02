@@ -31,14 +31,12 @@
 </template>
 
 <script>
-import Vuex from "vuex"
-
 export default {
     name: "DiscoverFooter"
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 footer
     width: 100%
     height: 3rem

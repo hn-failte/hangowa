@@ -1,42 +1,53 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from "vue";
+import Router from "vue-router";
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: "/",
       redirect: "index"
     },
     {
-      path: '/index',
+      path: "/index",
       name: "index",
-      component: ()=>import("../components/Index.vue")
+      component: () => import("../components/Index.vue")
     },
     {
-      path: '/discover',
+      path: "/discover",
       name: "discover",
-      component: ()=>import("../components/Discover.vue")
+      component: () => import("../components/Discover.vue")
     },
     {
-      path: '/my',
+      path: "/my",
       name: "my",
-      component: ()=>import("../components/My.vue")
+      component: () => import("../components/My.vue")
     },
     {
-        path: '/login',
-        name: 'login',
-        component: ()=>import('../components/Login.vue')
+      path: "/login",
+      name: "login",
+      component: () => import("../components/Login.vue")
     },
     {
-        path: '/register',
-        name: 'register',
-        component: ()=>import('../components/Register.vue')
+      path: "/register",
+      name: "register",
+      component: () => import("../components/Register.vue")
+    },
+    {
+      path: "/search",
+      name: "search",
+      component: () => import("../components/Search.vue")
+    },
+    {
+      path: "/detail",
+      name: "detail",
+      component: () => import("../components/Detail.vue")
     },
     {
       path: "**",
-      redirect: "index"
+      // redirect: "index" //重定向到主页
+      component: () => import("../components/Detail.vue") //Detail测试
     }
   ]
-})
+});
