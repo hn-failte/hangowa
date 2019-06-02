@@ -1,14 +1,24 @@
 <template>
     <header>
         <a href="javascript: void(0)" @click="backTop" class="backTop"></a>
-        <input type="search">
-        <a class="more" href="javascript: void(0)" @click="moreMenuToggle">go!</a>
+        <input type="search" @input="searchInfo($event)">
+        <a class="more" href="javascript: void(0)" @click="goSearch">go!</a>
     </header>
 </template>
 
 <script>
+import Vuex from 'vuex'
 export default {
-    name: "SearchHead"
+    name: "SearchHead",
+    methods: {
+        ...Vuex.mapActions({
+            searchInfo: "search/acSearchInfo",
+            goSearch: "search/acGoSearch",
+        }),
+        backTop(){
+        this.$router.back();
+        }
+    }
 }
 </script>
 

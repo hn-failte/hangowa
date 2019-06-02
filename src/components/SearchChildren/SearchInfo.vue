@@ -1,16 +1,18 @@
 <template>
     <ul class="search-info">
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
+        <li v-for="(item,index) in infoList" :key="index">{{item[0]}}</li>
     </ul>
 </template>
 
 <script>
+import Vuex from "vuex"
 export default {
-    name: "SearchBody"
+    name: "SearchBody",
+    computed: {
+        ...Vuex.mapState({
+            infoList: state => state.search.infoList
+        })
+    },
 }
 </script>
 
@@ -26,4 +28,5 @@ export default {
             height: 1rem
             line-height: 1rem
             width: 100%
+            text-align: left
 </style>
