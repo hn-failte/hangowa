@@ -1,7 +1,7 @@
 <template>
     <div id="hgLogin">
         <div class="loginHeader">
-            <span class="iconfont icon-home-line"></span>
+            <router-link to='./Index' class="iconfont icon-home-line" tag='span'></router-link>
             <span class="hgLog">登录</span>
             <router-link to='./Register' class="hgReg" tag='span'>注册</router-link>
         </div>
@@ -14,10 +14,27 @@
                 <label for="">密 &nbsp; 码:</label>
                 <input type="password">
             </div>
-            <div class="denl">登录</div>
+            <!-- <div class="denl" @touchenter="li">登录</div> -->
+            <v-touch class="denl" tag='div' v-on:tap="li">登录</v-touch>
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    data(){
+        return {
+            msg: 'xixi'
+        }
+    },
+    methods: {
+        li(){
+            alert(1)
+        }
+    }
+}
+</script>
+
 
 <style lang="scss" scoped>
     #hgLogin{

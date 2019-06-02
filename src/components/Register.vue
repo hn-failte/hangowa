@@ -1,7 +1,7 @@
 <template>
     <div id="hgLogin">
         <div class="loginHeader">
-            <span class="iconfont icon-home-line"></span>
+            <router-link to='./Index' class="iconfont icon-home-line" tag='span'></router-link>
             <span class="hgLog">注册</span>
             <router-link to='./Login' class="hgReg" tag='span'>登录</router-link>
         </div>

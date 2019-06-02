@@ -3,6 +3,10 @@ import App from './App.vue'
 import router from './routers/index'
 import store from './store/index.js'
 
+//引入vue-touch
+import VueTouch from 'vue-touch'
+Vue.use(VueTouch, {name: 'v-touch'})
+
 //完整引入Mint-UI
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
