@@ -1,29 +1,35 @@
 # hangowa
 
-## Project setup
+## 项目操作
+
+安装依赖
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+调试项目
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+构建项目
 ```
 npm run build
 ```
 
-### Run your tests
+测试项目
 ```
 npm run test
 ```
 
-### Lints and fixes files
+语法检测
 ```
 npm run lint
 ```
+## 插件的使用
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+轮播图 vue-awesome-swiper
+https://www.swiper.com.cn/api/index.html
+
+组件 mint-ui
+http://mint-ui.github.io/docs/#/zh-cn2

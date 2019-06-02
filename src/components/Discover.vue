@@ -10,16 +10,11 @@
 </template>
 
 <script>
-import discover from "@api/discover.js";
-import Swiper from "swiper/dist/js/swiper.esm.bundle";
+import Vuex from 'vuex'
 export default {
   name: "Discover",
   created() {
-    // async function acDiscoverData(){
-    //     let data = await discover.discoverData()
-    //     console.log(data)
-    // }
-    // acDiscoverData()
+    // this.getLists()
   },
   components: { //子组件懒加载
       DiscoverHeader: ()=>import("@components/DiscoverChildren/DiscoverHeader"),
@@ -28,9 +23,20 @@ export default {
       DiscoverMain: ()=>import("@components/DiscoverChildren/DiscoverMain"),
       DiscoverGlobal: ()=>import("@components/DiscoverChildren/DiscoverGlobal"),
       DiscoverFooter: ()=>import("@components/DiscoverChildren/DiscoverFooter")
-  }
+  },
+  methods: {
+    ...Vuex.mapActions({
+      getLists: "discover/acGetLists"
+    }),
+    ...Vuex.mapMutations({
+      //
+    })
+  },
 };
 </script>
 
 <style lang="sass" scoped>
+div
+  position: relative
+  z-index: -5
 </style>

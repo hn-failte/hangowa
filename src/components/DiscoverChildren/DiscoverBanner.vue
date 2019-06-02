@@ -5,25 +5,32 @@
         </div>
         <div class="banner-main">
             <p class="top">
-                <img src="../../assets/discover/main-top.jpg">
-                <img src="../../assets/discover/main-top.jpg">
-                <img src="../../assets/discover/main-top.jpg">
+                <img src="@assets/discover/main-top.jpg">
+                <img src="@assets/discover/main-top.jpg">
+                <img src="@assets/discover/main-top.jpg">
             </p>
             <p class="bottom">
-                <img src="../../assets/discover/main-bottom.jpg">
-                <img src="../../assets/discover/main-bottom.jpg">
+                <img src="@assets/discover/main-bottom.jpg">
+                <img src="@assets/discover/main-bottom.jpg">
             </p>
         </div>
     </section>
 </template>
 
 <script>
+import Vuex from "vuex"
+
 export default {
-    name: "DiscoverBanner"
+    name: "DiscoverBanner",
+    computed: {
+        ...Vuex.mapState({
+            //
+        })
+    }
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 section
     width: 100%
     height: 4.2rem
