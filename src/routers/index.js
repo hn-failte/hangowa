@@ -25,6 +25,11 @@ export default new Router({
       component: () => import("../components/My.vue")
     },
     {
+      path: '/shopCar',
+      name: "shopCar",
+      component: ()=>import("../components/shopCar.vue")
+    },
+    {
       path: "/login",
       name: "login",
       component: () => import("../components/Login.vue")
