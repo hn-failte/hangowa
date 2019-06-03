@@ -1,58 +1,24 @@
 import Vue from "vue";
 import Router from "vue-router";
-
+import appnav from './appnav'
+import search from './search'
+import login from './login'
+import shopcar from './shopcar'
 Vue.use(Router);
 
 export default new Router({
   routes: [
     {
       path: "/",
-      redirect: "index"
+      redirect: "index" //默认重定向的主页
     },
-    {
-      path: "/index",
-      name: "index",
-      component: () => import("../components/Index.vue")
-    },
-    {
-      path: "/discover",
-      name: "discover",
-      component: () => import("../components/Discover.vue")
-    },
-    {
-      path: "/my",
-      name: "my",
-      component: () => import("../components/My.vue")
-    },
-    {
-      path: '/shopCar',
-      name: "shopCar",
-      component: ()=>import("../components/shopCar.vue")
-    },
-    {
-      path: "/login",
-      name: "login",
-      component: () => import("../components/Login.vue")
-    },
-    {
-      path: "/register",
-      name: "register",
-      component: () => import("../components/Register.vue")
-    },
-    {
-      path: "/search",
-      name: "search",
-      component: () => import("../components/Search.vue")
-    },
-    {
-      path: "/detail",
-      name: "detail",
-      component: () => import("../components/Detail.vue")
-    },
+    ...appnav,
+    ...search,
+    ...login,
+    ...shopcar,
     {
       path: "**",
-      // redirect: "index" //重定向到主页
-      component: () => import("../components/Detail.vue") //Detail测试
+      redirect: "index" //错误路径重定向到主页
     }
   ]
 });

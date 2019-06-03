@@ -11,11 +11,11 @@
 
 <script>
 export default {
-    
+    name: "IndexHeader"
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     div>header{
         position: relative;
         height: 62px;

@@ -16,13 +16,13 @@
 
 <script>
 export default {
-    
+    name: "IndexAd"
 }
 </script>
 
 
 
-<style lang="scss">
+<style lang="scss" scoped>
     div{
         height: 185px;
     }

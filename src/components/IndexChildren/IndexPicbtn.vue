@@ -11,12 +11,12 @@
 
 <script>
 export default {
-    
+    name: "IndexPicbtn"
 }
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
     .picbtn{
         height: 120px;
     }

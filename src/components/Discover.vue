@@ -10,6 +10,7 @@
 </template>
 
 <script>
+// 发现界面
 import Vuex from 'vuex'
 export default {
   name: "Discover",

@@ -8,6 +8,7 @@
 </template>
 
 <script>
+// 下方导航栏
 export default {
 	name: "AppNav",
 	data: ()=>{
