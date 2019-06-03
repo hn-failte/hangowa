@@ -336,14 +336,15 @@ export default {
             }
         }
         .mallBottom{
-            // height: 2.83rem;
-            height: 4.0rem;
+            height: 2.83rem;
+            // height: 4.0rem;
             // background: pink;
             .navText{
                 padding: 0.26rem;
                 background: white;
                 display: flex;
                 justify-content: space-around;
+                height: 0.4rem;
                 a{
                     color: #111;
                 }
@@ -376,6 +377,7 @@ export default {
                 font-size: 0.23rem;
                 padding: 0.29rem 0;
                 color: #555;
+                height: 0.4rem;
             }
         }
     }
