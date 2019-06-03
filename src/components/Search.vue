@@ -1,22 +1,21 @@
 <template>
     <div class="search">
         <SearchHead></SearchHead>
-        <SearchInfo v-if="state.searching"></SearchInfo>
-        <SearchBody v-if="state.searched"></SearchBody>
+        <SearchInfo v-if="searching"></SearchInfo>
+        <SearchBody v-if="searched"></SearchBody>
     </div>
 </template>
 
 <script>
+import Vuex from "vuex"
 export default {
     name: "Search",
-    data(){
-        return {
-            state: {
-                recommend: false,
-                searching: false,
-                searched: false
-            }
-        }
+    computed: {
+        ...Vuex.mapState({
+            recommend: state=>state.search.recommend,
+            searching: state=>state.search.searching,
+            searched: state=>state.search.searched
+        })
     },
     components: {
         SearchHead: ()=>import("./SearchChildren/SearchHead"),

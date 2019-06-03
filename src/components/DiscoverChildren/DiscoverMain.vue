@@ -2,10 +2,10 @@
     <main>
         <h3>精选专题商品</h3>
         <ul class="main-body">
-            <li class="contents">
+            <router-link tag="li" class="contents" to="/detail">
                 <img src="@assets/discover/main-shopping-1.jpg">
                 <p>洋溪蜜柚2个装 共6斤左右 新鲜时令水果</p>
-            </li>
+            </router-link>
             <li class="contents">
                 <img src="@assets/discover/main-shopping-1.jpg">
                 <p>洋溪蜜柚2个装 共6斤左右 新鲜时令水果</p>
