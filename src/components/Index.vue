@@ -4,6 +4,9 @@
         <IndexLunbo></IndexLunbo>
         <IndexPicbtn></IndexPicbtn>
         <IndexAd></IndexAd>
+        <IndexTehui></IndexTehui>
+        <IndexShangpin></IndexShangpin>
+        <IndexFooter></IndexFooter>
     </div>
 </template>
 
@@ -15,6 +18,9 @@ export default {
         IndexLunbo: ()=>import("./IndexChildren/IndexLunbo.vue"),
         IndexPicbtn: ()=>import("./IndexChildren/IndexPicbtn.vue"),
         IndexAd: ()=>import("./IndexChildren/IndexAd.vue"),
+        IndexTehui: ()=>import("./IndexChildren/IndexTehui.vue"),
+        IndexShangpin: ()=>import("./IndexChildren/IndexShangpin.vue"),
+        IndexFooter: ()=>import("./IndexChildren/IndexFooter.vue"),
     }
 }
 </script>

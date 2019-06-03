@@ -38,7 +38,7 @@ export default {
         font-size: 30px;
     }
     div>header>ul>.fdj{
-        position: fixed;
+        position: absolute;
         top: 21px;
         left: 270px;
         font-size: 23px;

@@ -1,6 +1,8 @@
 <template>
     <div>
         <shopCarHeader></shopCarHeader>
+        <shopCarContent></shopCarContent>
+        <shopCarFooter></shopCarFooter>
     </div>
 </template>
 
@@ -11,6 +13,8 @@ export default {
     name: "shopCar",
     components: {
         shopCarHeader: ()=>import("./shopCarChildren/shopCarHeader.vue"),
+        shopCarContent: ()=>import("./shopCarChildren/shopCarContent.vue"),
+        shopCarFooter: ()=>import("./shopCarChildren/shopCarFooter.vue"),
     }
 }
 </script>
