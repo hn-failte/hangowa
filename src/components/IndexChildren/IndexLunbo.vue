@@ -64,7 +64,7 @@ export default {
 };
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
     .swiper-container
       width: 100%
       height: 3rem

@@ -2,7 +2,7 @@
     <header>
         <a href="javascript: void(0)" @click="backTop" class="backTop"></a>
         <input type="search" @input="searchInfo($event)">
-        <a class="more" href="javascript: void(0)" @click="goSearch">go!</a>
+        <a class="more" href="javascript: void(0)" @click="goSearch">搜索</a>
     </header>
 </template>
 
@@ -16,7 +16,7 @@ export default {
             goSearch: "search/acGoSearch",
         }),
         backTop(){
-        this.$router.back();
+            this.$router.back();
         }
     }
 }
@@ -37,7 +37,7 @@ header
         display: block
         width: 1rem
         height: 100%
-        background: url("../../assets/discover/arrow_left_b.png") no-repeat center
+        background: url("../../assets/common/backTop.png") no-repeat center
         background-size: .3rem
     a.more
         display: block

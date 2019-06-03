@@ -1,6 +1,6 @@
 <template>
     <ul class="search-info">
-        <li v-for="(item,index) in infoList" :key="index">{{item[0]}}</li>
+        <router-link tag="li" v-for="(item,index) in infoList" :to="{name: 'detail', query: {'index': index}}" :key="index">{{item[0]}}</router-link>
     </ul>
 </template>
 
