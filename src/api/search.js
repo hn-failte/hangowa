@@ -9,9 +9,11 @@ export default {
         }
         document.body.append(script);
     },
-    goSearch(keyword){
-        // eslint-disable-next-line no-console
-        console.log("keyword:", keyword);
-        return Http.get("http://localhost:3000/search")
+    searchGoods(keyword){
+        // eslint-disable-next-line no-dupe-keys
+        return Http.get("/mo_bile/index.php", {act: "goods", op: "goods_list", keyword: keyword, page: "10", curpage: "1", keyword: keyword})
+    },
+    goodDetail(id, key=""){
+        return Http.get("/mo_bile/index.php", {act:"goods", op: "goods_detail", "goods_id": id, key: key})
     }
 }

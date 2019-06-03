@@ -2,7 +2,6 @@ import search from '@api/search'
 export default {
     acSearchInfo({commit}, e){
         let val = e.target.value.toString().trim();
-        // eslint-disable-next-line no-console
         if(val == "") return;
         clearTimeout(this.timer)
         this.timer = setTimeout(() => {
@@ -12,9 +11,9 @@ export default {
             }, 100);
         }, 500);
     },
-    async acGoSearch({commit, state}){
-        if(state.keyword == "") return;
-        let res = await search.goSearch(state.keyword);
-        commit("muGoSearch", res)
+    async acSearchGoods({commit, state}){
+        if(state.keyword == "") return;        
+        let res = await search.searchGoods(state.keyword);
+        commit("muSearchGoods", res)
     }
 }

@@ -8,12 +8,13 @@ export default {
         let list = arr[1].result
         state.infoList = list
     },
-    muGoSearch(state, obj){
+    muSearchGoods(state, obj){
+        if(!obj) return;
         state.recommend = false;
         state.searching = false;
         // eslint-disable-next-line no-console
-        console.log(obj.data);
-        let list = obj.data;
+        console.log(obj.data.datas.goods_list);
+        let list = obj.data.datas.goods_list;
         state.goodsList = list;
     },
     

@@ -1,8 +1,8 @@
 <template>
     <header>
         <a href="javascript: void(0)" @click="backTop" class="backTop"></a>
-        <input type="search" @input="searchInfo($event)">
-        <a class="more" href="javascript: void(0)" @click="goSearch">搜索</a>
+        <input type="search" @input="searchInfo($event)" v-model="val">
+        <router-link tag="a" :to="{name: 'searchlist', search: {keyword: val}}" class="more" href="javascript: void(0)">搜索</router-link>
     </header>
 </template>
 
@@ -10,10 +10,14 @@
 import Vuex from 'vuex'
 export default {
     name: "SearchHead",
+    data(){
+        return {
+            val: ""
+        }
+    },
     methods: {
         ...Vuex.mapActions({
             searchInfo: "search/acSearchInfo",
-            goSearch: "search/acGoSearch",
         }),
         backTop(){
             this.$router.back();

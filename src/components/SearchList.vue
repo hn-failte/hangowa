@@ -1,18 +1,21 @@
 <template>
     <div>
         <header>
-            <button class="backTop"></button>
+            <a class="backTop" @click="backTop"></a>
+            <router-link tag="p" :to="{name: 'search'}" class="keyword">{{keyword}}</router-link>
+            <a class="iconfont search">&#xe611;</a>
+            <a class="kind"></a>
+            <a class="more"></a>
         </header>
         <ul class="search-body">
             <router-link tag="li" to="detail" v-for="(item, index) in goodsList" :key="index">
-                <img :src="item.img2">
+                <img :src="item.goods_image_url">
                 <div>
-                    <p class="content-title">{{item.name}}</p>
+                    <p class="content-title">{{item.goods_name}}</p>
                     <p class="content-price">
-                        <span class="new-price"> {{item.price}} </span>
-                        <span class="old-price"> {{item.originalPrice}} </span>
+                        <span class="price"> {{item.goods_price}} </span>
                     </p>
-                    <p class="content-info">{{item.fastPostFee==0 ? "免运费" : "满"+fastPostFee+"包邮"}}</p>
+                    <p class="content-info"><span>销量<i>{{item.goods_salenum}}</i></span><span>{{item.store_name}}</span><button class="more"></button></p>
                 </div>
             </router-link>
         </ul>
@@ -23,20 +26,56 @@
 import Vuex from 'vuex'
 export default {
     name: "SeachList",
+    created() {
+        this.$store.dispatch("search/acSearchGoods")
+    },
     computed: {
         ...Vuex.mapState({
+            keyword: state=>state.search.keyword,
             goodsList: state=>state.search.goodsList
         })
     },
+    methods: {
+        backTop(){
+            this.$router.back();
+        }
+    }
 }
 </script>
 
 <style lang="sass" scoped>
 header
+    display: flex
+    align-items: center
     height: 1rem
-    background: gray
+    background: rgba(248,248,248,0.95)
     .backTop
-        background: url("../assets/common/backTop.png")
+        display: block
+        height: 100%
+        width: 1rem
+        background: url("../assets/common/backTop.png") no-repeat center
+        background-size: .3rem
+    .keyword
+        background: #eee
+        color: #aaa
+        height: .6rem
+        line-height: .6rem
+        width: 100%
+    .search
+        display: block
+        width: 1rem
+    .kind
+        display: block
+        background: url("../assets/common/kind.png") no-repeat center
+        background-size: .6rem
+        width: 1rem
+        height: 100%
+    .more
+        display: block
+        background: url("../assets/common/more.png") no-repeat center
+        background-size: .3rem
+        width: 1rem
+        height: 100%
 .search-body
         width: 100%
         li
@@ -66,17 +105,15 @@ header
                 text-align: left
                 padding: 0 .2rem
                 box-sizing: border-box
-                .new-price
+                .price
                     color: red
                     font-size: .3rem
-                .old-price
-                    color: gray
-                    font-size: .25rem
-                    text-decoration: line-through
             p.content-info
                 height: .4rem
                 line-height: .4rem
                 text-align: left
                 padding: 0 .2rem
                 color: gray
+.more
+    background: url("../assets/common/more.png") no-repeat center
 </style>
