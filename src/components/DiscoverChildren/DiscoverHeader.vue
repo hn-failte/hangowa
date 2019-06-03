@@ -45,7 +45,7 @@ header
       display: block
       width: 1rem
       height: 100%
-      background: url("../../assets/discover/arrow_left_b.png") no-repeat center
+      background: url("../../assets/common/backTop.png") no-repeat center
       background-size: .3rem
     a.more
       display: block

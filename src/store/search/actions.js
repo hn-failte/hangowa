@@ -12,10 +12,9 @@ export default {
             }, 100);
         }, 500);
     },
-    acGoSearch({commit, state}){
-        search.goSearch(state.keyword);
-        setTimeout(() => {
-            commit("muGoSearch", window.failtejsonpdata2)
-        }, 100);
+    async acGoSearch({commit, state}){
+        if(state.keyword == "") return;
+        let res = await search.goSearch(state.keyword);
+        commit("muGoSearch", res)
     }
 }
