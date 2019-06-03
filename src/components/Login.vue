@@ -21,7 +21,11 @@
 </template>
 
 <script>
+import login from "@api/login"
 export default {
+    created(){
+        
+    },
     data(){
         return {
             msg: 'xixi'
@@ -29,7 +33,16 @@ export default {
     },
     methods: {
         li(){
-            alert(1)
+            async function fun(){
+                console.log(1)
+                let data = await login.query()
+                console.log(data)
+            }
+            fun()
+            // if(data.staus === 200){
+            //     alert('登录成功')
+            // }
+            
         }
     }
 }
