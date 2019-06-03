@@ -15,6 +15,8 @@ export default {
         // eslint-disable-next-line no-console
         console.log(obj.data.datas.goods_list);
         let list = obj.data.datas.goods_list;
+        if(list.length === 0) state.hasResult = false
+        else state.hasResult = true
         state.goodsList = list;
     },
     
