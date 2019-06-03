@@ -20,9 +20,9 @@ export default new Router({
       component: ()=>import("../components/Discover.vue")
     },
     {
-      path: '/my',
-      name: "my",
-      component: ()=>import("../components/My.vue")
+      path: '/shopCar',
+      name: "shopCar",
+      component: ()=>import("../components/shopCar.vue")
     },
     {
         path: '/login',
