@@ -68,7 +68,10 @@ export default {
     .swiper-container
       width: 100%
       height: 3rem
-    .swiper-slide
-        //
+      z-index: -3
+      .swiper-wrapper
+        z-index: -2
+        .swiper-slide
+          z-index: -1
     
 </style>

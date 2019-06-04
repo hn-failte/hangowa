@@ -2,8 +2,8 @@
     <div>
         <header>
             <ul>
-                <li class="iconfont icon-home-line"></li>
-                <li><img src="../../assets/home_logo.png"></li>
+                <router-link tag="li" to="/index" class="iconfont icon-home-line"></router-link>
+                <li><span>购物车</span></li>
                 <li class="li3">分类</li>
             </ul>
         </header>
@@ -24,8 +24,9 @@
     div>header{
         height: 1rem;
         line-height: 1rem;
-        &>ul>li>img{
-            height: 1rem
+        &>ul>li>span{
+            line-height: 1rem;
+            font-size: 0.4rem;
         }
     }
     div>header>ul{
@@ -39,7 +40,7 @@
         flex: 1;
     }
     div>header>ul>.li3{
-        font-size: 0.4rem;
+        font-size: 0.3rem;
         text-align: right;
         padding-right: 0.3rem;
     }
