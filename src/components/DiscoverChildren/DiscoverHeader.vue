@@ -55,6 +55,8 @@ header
       background: url("../../assets/discover/more_b.png") no-repeat center
       background-size: .4rem
     .discover-title
+      font-size: .3rem
+      font-weight: bold
       width: 100%
       height: 100%
     .more-menu

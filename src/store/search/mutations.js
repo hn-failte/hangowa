@@ -1,19 +1,15 @@
 export default {
-    muSearchInfo(state, arr){
-        state.keyword = arr[0];
-        state.recommend = false;
-        state.searching = true;
+    muSearchInfo(state, res){
+        state.keyword = res;
         // eslint-disable-next-line no-console
-        console.log(arr[1])
-        let list = arr[1].result
+        console.log("search", res.data.datas.list);
+        let list = res.data.datas.list
         state.infoList = list
     },
     muSearchGoods(state, obj){
         if(!obj) return;
-        state.recommend = false;
-        state.searching = false;
         // eslint-disable-next-line no-console
-        console.log(obj.data.datas.goods_list);
+        console.log("search", obj.data.datas.goods_list);
         let list = obj.data.datas.goods_list;
         if(list.length === 0) state.hasResult = false
         else state.hasResult = true

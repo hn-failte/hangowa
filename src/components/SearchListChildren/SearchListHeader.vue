@@ -1,7 +1,7 @@
 <template>
     <header>
         <a class="backTop" @click="backTop"></a>
-        <router-link tag="p" :to="{name: 'search'}" class="keyword">{{keyword}}</router-link>
+        <router-link tag="p" :to="{name: 'search', query: {keyword: keyword}}" class="keyword">{{keyword}}</router-link>
         <a class="iconfont search">&#xe611;</a>
         <a class="kind"></a>
         <a class="more"></a>
@@ -9,13 +9,12 @@
 </template>
 
 <script>
-import Vuex from 'vuex'
 export default {
     name: "SearchListHeader",
     computed: {
-        ...Vuex.mapState({
-            keyword: state=>state.search.keyword
-        })
+        keyword(){
+            return this.$route.query.keyword
+        }
     },
     methods: {
         backTop(){

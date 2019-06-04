@@ -1,18 +1,35 @@
 <template>
     <header>
         <a href="javascript: void(0)" @click="backTop" class="backTop"></a>
-        <input type="search" @input="searchInfo($event)" v-model="val">
-        <router-link tag="a" :to="{name: 'searchlist', search: {keyword: val}}" class="more" href="javascript: void(0)">搜索</router-link>
+        <input type="search" v-model="keyword" placeholder="请输入搜索关键字" autofocus="autofocus">
+        <router-link tag="a" :to="{name: 'searchlist', query: {keyword: keyword}}" class="more" href="javascript: void(0)">搜索</router-link>
     </header>
 </template>
 
 <script>
+/* eslint-disable */
 import Vuex from 'vuex'
 export default {
     name: "SearchHead",
-    data(){
+    data() {
         return {
-            val: ""
+            keywordContent: "",
+            loadFlag: false
+        }
+    },
+    computed: {
+        keyword: {
+            get(){
+                if(!this.loadFlag){
+                    let keyword = this.$route.query.keyword
+                    this.keywordContent = keyword
+                    this.loadFlag = true
+                }
+                return this.keywordContent
+            },
+            set(newVal){
+                this.keywordContent = newVal;
+            }
         }
     },
     methods: {

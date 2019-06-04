@@ -2,26 +2,11 @@
     <main>
         <h3>精选专题商品</h3>
         <ul class="main-body">
-            <router-link tag="li" class="contents" to="/detail">
-                <img src="@assets/discover/main-shopping-1.jpg">
-                <p>洋溪蜜柚2个装 共6斤左右 新鲜时令水果</p>
+            <router-link tag="li" class="contents" :to="{name: 'detail', query: {data: item.goods_id, type: 'goods'}}" v-for="(item, index) in topicGoodsList" :key="index">
+                <img :src="item.goods_image">
+                <p class="good-name">￥ {{item.goods_name}}</p>
+                <p class="good-price">￥ {{item.goods_price}}</p>
             </router-link>
-            <li class="contents">
-                <img src="@assets/discover/main-shopping-1.jpg">
-                <p>洋溪蜜柚2个装 共6斤左右 新鲜时令水果</p>
-            </li>
-            <li class="contents">
-                <img src="@assets/discover/main-shopping-1.jpg">
-                <p>洋溪蜜柚2个装 共6斤左右 新鲜时令水果</p>
-            </li>
-            <li class="contents">
-                <img src="@assets/discover/main-shopping-1.jpg">
-                <p>洋溪蜜柚2个装 共6斤左右 新鲜时令水果</p>
-            </li>
-            <li class="contents">
-                <img src="@assets/discover/main-shopping-1.jpg">
-                <p>洋溪蜜柚2个装 共6斤左右 新鲜时令水果</p>
-            </li>
         </ul>
     </main>
 </template>
@@ -33,7 +18,7 @@ export default {
     name: "DiscoverMain",
     computed: {
         ...Vuex.mapState({
-            //
+            topicGoodsList: state=>state.discover.topicGoodsList
         })
     }
 }
@@ -56,10 +41,15 @@ main
             img
                 width: 100%
                 height: 4rem
-            p
+            p.good-name
                 width: 100%
-                height: .8rem
+                height: 1.2rem
                 line-height: .4rem
                 font-size: .3rem
                 text-align: left
+            p.good-price
+                text-align: left
+                color: red
+                font-weight: bold
+                border-top: 1px solid #ccc
 </style>

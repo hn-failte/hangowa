@@ -1,6 +1,7 @@
 export default {
     swiperList: [],
-    sectionList: [],
+    bannerTopList: [],
+    bannerBottomList: [],
     topicGoodsList: [],
     globalGoodsList: []
 }

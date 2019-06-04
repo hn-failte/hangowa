@@ -1,6 +1,6 @@
 <template>
     <ul class="search-body">
-        <router-link tag="li" to="detail" v-for="(item, index) in goodsList" :key="index">
+        <router-link tag="li" :to="{name: 'detail', query: {data: item.goods_id, type: 'goods'}}" v-for="(item, index) in goodsList" :key="index">
             <img :src="item.goods_image_url">
             <p class="content-title">{{item.goods_name}}</p>
             <p class="content-price">
@@ -49,7 +49,7 @@ ul.search-body
                 left: 2.5rem
                 height: .8rem
                 line-height: .4rem
-                font-size: .27rem
+                font-size: .24rem
                 text-align: left
                 padding: 0 .2rem
                 box-sizing: border-box
@@ -81,7 +81,7 @@ ul.search-body
                     height: .4rem
                     line-height: .4rem
                     &:first-of-type
-                        width: 1rem
+                        width: 3rem
                     &:last-of-type
                         width: 3rem
                         white-space: nowrap

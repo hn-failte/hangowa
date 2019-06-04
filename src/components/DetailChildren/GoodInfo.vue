@@ -1,8 +1,11 @@
 <template>
-  <swiper :options="swiperOption" ref="mySwiper">
-    <img v-for="(item, index) in imgList" class="swiper-slide" :src="item.src" :key="index">
-    <div class="swiper-pagination" slot="pagination"></div>
-  </swiper>
+  <div class="good-header">
+    <swiper :options="swiperOption" ref="mySwiper">
+      <img v-for="(item, index) in imgList" class="swiper-slide" :src="item" :key="index">
+      <div class="swiper-pagination" slot="pagination"></div>
+    </swiper>
+    <a href="javascript: void(0);" class="backTop" @click="backTop"></a>
+  </div>
 </template>
 
 <script>
@@ -16,7 +19,6 @@ export default {
     return {
       swiperOption: {
         touchRatio: 0.5, //触摸比例
-        loop: true, //循环播放
         pagination: {
           //下方小圆点
           el: ".swiper-pagination",
@@ -34,28 +36,47 @@ export default {
   },
   computed: {
     ...Vuex.mapState({
-        imgList: state => state.detail.imgList
+      imgList: state => state.detail.imgList
     }),
     swiper() {
       return this.$refs.mySwiper.swiper;
     }
   },
   methods: {
-  },
+    backTop() {
+      this.$router.back();
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-.swiper-container {
+.good-header {
+  position: relative;
+  z-index: -4;
+  .swiper-container {
     z-index: -3;
     width: 100%;
-    height: 8rem;
     .swiper-wrapper {
-        z-index: -2;
-        .swiper-slide {
-            z-index: -1;
-            //
-        }
+      z-index: -2;
+      .swiper-slide {
+        z-index: -1;
+        width: 100%;
+      }
     }
+  }
+  .backTop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    background: rgba($color: #fff, $alpha: 0.5)
+      url("../../assets/common/backTop.png") no-repeat center;
+    background-size: 0.3rem;
+    border-radius: 50%;
+  }
 }
 </style>

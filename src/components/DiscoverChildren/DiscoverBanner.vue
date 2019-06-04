@@ -5,13 +5,10 @@
         </div>
         <div class="banner-main">
             <p class="top">
-                <img src="@assets/discover/main-top.jpg">
-                <img src="@assets/discover/main-top.jpg">
-                <img src="@assets/discover/main-top.jpg">
+                <router-link tag="img" :to="{name: 'detail', query: {data: item.data, type: item.type}}" :src="item.image" v-for="(item,index) in bannerTopList" :key="index"></router-link>
             </p>
             <p class="bottom">
-                <img src="@assets/discover/main-bottom.jpg">
-                <img src="@assets/discover/main-bottom.jpg">
+                <router-link tag="img" :to="{name: 'detail', query: {data: item.data, type: item.type}}" :src="item.image" v-for="(item,index) in bannerBottomList" :key="index"></router-link>
             </p>
         </div>
     </section>
@@ -24,7 +21,8 @@ export default {
     name: "DiscoverBanner",
     computed: {
         ...Vuex.mapState({
-            //
+            bannerTopList: state=>state.discover.bannerTopList,
+            bannerBottomList: state=>state.discover.bannerBottomList
         })
     }
 }

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="searchList">
         <SearchListHeader></SearchListHeader>
         <SearchListNav></SearchListNav>
         <SearchListMain v-if="hasResult"></SearchListMain>
@@ -18,7 +18,8 @@ export default {
         SearchListNone: ()=>import('./SearchListChildren/SearchListNone')
     },
     created() {
-        this.$store.dispatch("search/acSearchGoods")
+        let keyword = this.$route.query.keyword
+        this.$store.dispatch("search/acSearchGoods", keyword)
     },
     computed: {
         ...Vuex.mapState({
@@ -29,5 +30,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-
+    div.searchList
+        margin-bottom: 1rem
 </style>

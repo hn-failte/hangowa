@@ -19,7 +19,8 @@ export default {
 <style lang="scss">
 html,body{
   position: relative;
-  z-index: -12
+  z-index: -12;
+  background: #eee
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

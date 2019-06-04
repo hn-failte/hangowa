@@ -1,8 +1,6 @@
 <template>
   <swiper :options="swiperOption" ref="mySwiper" @touchEnd="play">
-    <img class="swiper-slide" @click="doalert" src="../../assets/discover/s1_1.jpg">
-    <img class="swiper-slide" @click="doalert" src="../../assets/discover/s1_1.jpg">
-    <img class="swiper-slide" @click="doalert" src="../../assets/discover/s1_1.jpg">
+    <router-link tag="img" :to="{name: 'detail', query: {data: item.data, type: item.type}}" class="swiper-slide" v-for="(item, index) in swiperList" :src="item.image" :key="index"></router-link>
     <div class="swiper-pagination" slot="pagination"></div>
     <div class="swiper-button-prev" slot="button-prev" @click="prev"></div>
     <div class="swiper-button-next" slot="button-next" @click="next"></div>
@@ -13,20 +11,18 @@
 import Vuex from "vuex";
 import "swiper/dist/css/swiper.css";
 
-import { swiper, swiperSlide } from "vue-awesome-swiper";
+import { swiper } from "vue-awesome-swiper";
 
 export default {
   name: "DiscoverSwiper",
   components: {
-    swiper,
-    // eslint-disable-next-line
-    swiperSlide
+    swiper
   },
   computed: {
     ...Vuex.mapState({
-      //
+      swiperList: state=>state.discover.swiperList
     }),
-    swiper() {
+    mySwiper() {
       return this.$refs.mySwiper.swiper;
     }
   },
@@ -39,38 +35,26 @@ export default {
         pagination: {
           //下方小圆点
           el: ".swiper-pagination",
-          type: "bullets",
-          clickable: true
+          type: "bullets"
         },
         navigation: {
           //左右箭头按钮
           hideOnClick: true
         }
-      },
-      slides: [
-        "../../assets/discover/s1_1.jpg",
-        "../../assets/discover/s1_1.jpg",
-        "../../assets/discover/s1_1.jpg"
-      ],
-      virtualData: {
-        slides: []
       }
     };
   },
   methods: {
     play() {
       setTimeout(() => {
-        this.swiper.autoplay.start();
+        this.mySwiper.autoplay.start();
       }, 500);
     },
     prev() {
-      this.swiper.slidePrev();
+      this.mySwiper.slidePrev();
     },
     next() {
-      this.swiper.slideNext();
-    },
-    doalert(){
-      alert(1)
+      this.mySwiper.slideNext();
     }
   }
 };

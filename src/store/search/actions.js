@@ -1,19 +1,12 @@
 import search from '@api/search'
 export default {
-    acSearchInfo({commit}, e){
-        let val = e.target.value.toString().trim();
-        if(val == "") return;
-        clearTimeout(this.timer)
-        this.timer = setTimeout(() => {
-            search.searchInfo(val);
-            setTimeout(() => {
-                commit("muSearchInfo", [val, window.failtejsonpdata1])
-            }, 100);
-        }, 500);
+    async acSearchInfo({commit},){
+        let data = await search.searchInfo();
+        commit("muSearchInfo", data);
     },
-    async acSearchGoods({commit, state}){
-        if(state.keyword == "") return;        
-        let res = await search.searchGoods(state.keyword);
+    async acSearchGoods({commit}, keyword){
+        if(keyword == "") return;
+        let res = await search.searchGoods(keyword);
         commit("muSearchGoods", res)
     }
 }

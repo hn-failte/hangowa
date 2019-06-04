@@ -15,7 +15,7 @@ import Vuex from 'vuex'
 export default {
   name: "Discover",
   created() {
-    // this.getLists()
+    this.$store.dispatch("discover/acGetLists")
   },
   components: { //子组件懒加载
       DiscoverHeader: ()=>import("@components/DiscoverChildren/DiscoverHeader"),

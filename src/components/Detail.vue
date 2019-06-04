@@ -7,9 +7,22 @@
 
 <script>
 // 商品详情
-import Vuex from 'vuex'
 export default {
     name: "Detail",
+    created() {
+        this.$store.commit("detail/init");
+        if(this.$route.query.type == "goods"){
+            let data = this.$route.query.data;
+            this.$store.dispatch("detail/acGetGoodDetail", data);
+        }
+        else if(this.$route.query.type == "url"){
+            location.href = this.$route.query.data
+        }
+        else{
+            // eslint-disable-next-line
+            console.log("Wrong Type")
+        }
+    },
     components: {
         GoodInfo: ()=>import("@components/DetailChildren/GoodInfo"),
         GoodDesc: ()=>import("@components/DetailChildren/GoodDesc")
