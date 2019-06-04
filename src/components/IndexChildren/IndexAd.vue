@@ -3,7 +3,13 @@
         <ul class="ul1">
             <li class="li1">
                 <ul class="ul2">
-                    <li><img class="img1" src="../../assets/s0_06064914275721971.png"></li>
+                    <li>
+                        <router-link tag="img" :to="{name:'',qurey:{data:home4.rectangle1_data,type:home4.rectangle1_type}}"
+                        v-for="(home4,index) in AdList" :key="index" class="img1"
+                        :src="home4.image"></router-link>
+                    </li>
+
+
                     <li><img class="img2" src="../../assets/s0_06064914487884924.png"></li>
                     
                 </ul>
@@ -15,8 +21,19 @@
 
 
 <script>
+import Vuex from "vuex";
+
 export default {
-    name: "IndexAd"
+    name: "IndexAd",
+    computed: {
+        ...Vuex.mapState({
+        AdList: state=>state.index.AdList
+        
+    }),
+    },
+created(){
+    console.log(this)
+}
 }
 </script>
 

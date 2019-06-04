@@ -1,8 +1,8 @@
 <template>
   <swiper :options="swiperOption" ref="mySwiper" @touchEnd="play">
-    <img class="swiper-slide" src="../../assets/discover/s1_1.jpg">
-    <img class="swiper-slide" src="../../assets/discover/s1_1.jpg">
-    <img class="swiper-slide" src="../../assets/discover/s1_1.jpg">
+    <router-link tag="img" :to="{name:'detail', query:{data:item.data, type:item.type}}"
+                  v-for="(item,index) in swiperList" :key="index" class="swiper-slide"
+                  :src="item.image"></router-link>
     <div class="swiper-pagination" slot="pagination"></div>
     <div class="swiper-button-prev" slot="button-prev" @click="prev"></div>
     <div class="swiper-button-next" slot="button-next" @click="next"></div>
@@ -23,7 +23,7 @@ export default {
   },
   computed: {
     ...Vuex.mapState({
-      //
+      swiperList: state=>state.index.swiperList
     }),
     swiper() {
       return this.$refs.mySwiper.swiper;
