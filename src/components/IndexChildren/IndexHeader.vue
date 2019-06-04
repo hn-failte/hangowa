@@ -17,11 +17,17 @@ export default {
 
 <style lang="scss" scoped>
     div>header{
-        position: relative;
+        // position: fixed;
+        top: 0;
+        width: 100%;
         height: 62px;
+        z-index: 3;
     }
     div>header>ul{
         display: flex;
+        position: fixed;
+        width: 100%;
+        background-color: white;
     }
     div>header>ul>.li1{
         margin: 10px 20px 0 10px;
@@ -38,7 +44,7 @@ export default {
         font-size: 30px;
     }
     div>header>ul>.fdj{
-        position: fixed;
+        position: absolute;
         top: 21px;
         left: 270px;
         font-size: 23px;

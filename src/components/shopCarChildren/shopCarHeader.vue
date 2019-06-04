@@ -2,79 +2,48 @@
     <div>
         <header>
             <ul>
-                <li class="iconfont icon-home-line"></li>
-                <li><img src="../../assets/home_logo.png"></li>
+                <router-link tag="li" to="/index" class="iconfont icon-home-line"></router-link>
+                <li><span>购物车</span></li>
                 <li class="li3">分类</li>
             </ul>
         </header>
-        <div class="content">
-            <div class="googsList" v-if="contentState">true</div>
-            <div class="noGoogs" v-else>
-                <div class="kong">
-                    <p>购物车是空的哟，赶紧<a href="#">去逛逛</a></p>
-                </div>
-            </div>
-        </div>
-        <div class="mingxi">
-
-        </div>
     </div>
 </template>
 
 
 
 <script>
-export default {
-    data(){
-        return {
-            contentState: false
-        }
+    export default {
+
     }
-}
 </script>
 
 
 
-<style lang="scss">
+<style lang="scss" scoped>
     div>header{
-        height: 45px;
+        height: 1rem;
+        line-height: 1rem;
+        &>ul>li>span{
+            line-height: 1rem;
+            font-size: 0.4rem;
+        }
     }
     div>header>ul{
         display: flex;
     }
     div>header>ul>.icon-home-line{
-        font-size: 50px;
+        font-size: 1rem;
         text-align: left;
-        line-height: 45px;
     }
     div>header>ul>li{
         flex: 1;
     }
     div>header>ul>.li3{
-        font-size: 18px;
+        font-size: 0.3rem;
         text-align: right;
-        line-height: 45px;
-        padding-right: 10px;
+        padding-right: 0.3rem;
     }
-    div>.content>.noGoogs{
-        height: 330px;
-        background-color: rgb(255, 212, 212);
-        position: relative;
-    }
-    div>.content>.noGoogs>.kong{
-        height: 40px;
-        width: 100%;
-        background-color: red;
-        position: fixed;
-        margin-top: 150px;
-        font-size: 18px;
-        line-height: 40px;
-        background-color: rgb(224, 222, 222);
-        border: 1px solid rgb(128, 127, 127);
-    }
-    div>.content>.noGoogs>.kong>p>a{
-        font-size: 18px;
-        color: blue;
-    }
+    
 
 </style>

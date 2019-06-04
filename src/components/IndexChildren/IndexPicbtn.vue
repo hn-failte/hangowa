@@ -2,7 +2,7 @@
     <div class="picbtn">
         <ul>
             <li><span class="iconfont icon-shangcheng"></span><p>我的商城</p></li>
-            <li><span class="iconfont icon-gouwuche"></span><p>购物车</p></li>
+            <router-link tag="li" to="/shopCar"><span class="iconfont icon-gouwuche"></span><p>购物车</p></router-link>
             <li><span class="iconfont icon-wo"></span><p>每日签到</p></li>
         </ul>
     </div>

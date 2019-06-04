@@ -24,10 +24,11 @@ export default {
 
 <style lang="scss" scoped>
     div{
-        height: 200px;
+        height: 185px;
     }
     div>.ul1{
         display: flex;
+        border-bottom: 10px solid rgb(219, 218, 218);
     }
     div>.ul1>.li1{
         flex: 1;
