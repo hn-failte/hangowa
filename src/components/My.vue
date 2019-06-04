@@ -336,8 +336,8 @@ export default {
             }
         }
         .mallBottom{
-            height: 2.83rem;
-            // height: 4.0rem;
+            // height: 2.83rem;
+            height: 4.0rem;
             // background: pink;
             .navText{
                 padding: 0.26rem;
