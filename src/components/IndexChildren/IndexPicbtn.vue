@@ -19,8 +19,10 @@ export default {
 <style lang="scss" scoped>
     .picbtn{
         height: 120px;
+        width: 100%;
     }
     .picbtn>ul{
+        width: 100%;
         display: flex;
     }
     .picbtn>ul>li{
