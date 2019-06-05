@@ -4,7 +4,8 @@ export default [
     name: "login",
     component: () => import("@components/Login.vue"),
     meta: {
-      showAppNav: true
+      showAppNav: true,
+      title: "登录"
     }
   },
   {
@@ -12,7 +13,8 @@ export default [
     name: "register",
     component: () => import("@components/Register.vue"),
     meta: {
-      showAppNav: true
+      showAppNav: true,
+      title: "注册"
     }
   }
 ];
