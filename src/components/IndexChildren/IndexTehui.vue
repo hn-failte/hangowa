@@ -29,11 +29,13 @@ export default {
     div{
         height: 2.7rem;
         width: 100%;
+        margin-top: 0.18rem;
     }
     div>ul>.li1>div{
-        height: 0.3rem;
-        line-height: 0.3rem;
-        width: 1.1rem;
+        height: 0.4rem;
+        line-height: 0.4rem;
+        width: 100%;
+        text-align: left;
         margin-left: 0.2rem;
         border-left: red 3px solid;
     }

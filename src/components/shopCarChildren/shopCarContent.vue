@@ -18,7 +18,7 @@
                                         <span>￥32.80</span>
                                         <div class="num">
                                             <button>-</button>
-                                            <button>2</button>
+                                            <input type="text">
                                             <button>+</button>
                                         </div>
                                     </li>
@@ -39,7 +39,7 @@
                                         <span>￥32.80</span>
                                         <div class="num">
                                             <button>-</button>
-                                            <button>2</button>
+                                            <input type="text">
                                             <button>+</button>
                                         </div>
                                     </li>
@@ -60,7 +60,7 @@
                                         <span>￥32.80</span>
                                         <div class="num">
                                             <button>-</button>
-                                            <button>2</button>
+                                            <input type="text">
                                             <button>+</button>
                                         </div>
                                     </li>
@@ -170,6 +170,13 @@
                         flex: 1;
                         text-align: right;
                         margin: 0.2rem;
+                        height: 0.22rem;
+                        &>input{
+                            width: 0.2rem;
+                            height: 100%;
+                            border-top: 0.1px black solid;
+                            border-bottom: 0.1px black solid;
+                        }
                     }
                 }
             }

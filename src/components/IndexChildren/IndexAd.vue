@@ -49,7 +49,7 @@ created(){
 
 <style lang="scss" scoped>
     div{
-        height: 4rem;
+        height: 3.7rem;
         width: 100%;
     }
     div>.ul1{
@@ -60,14 +60,27 @@ created(){
     div>.ul1>.li1{
         flex: 1;
         width: 50%;
+        height: 3.7rem;
+        line-height: 3.7rem;
     }
-    div>.ul1>.li1>.ul2>li>img{
-        width: 100%;
-        height: 80px;
+    div>.ul1>.li1>.ul2{
+        line-height: 1.8rem;
+        height: 3.7rem;
+        box-sizing: border-box;
+        li{
+            padding: 0;
+            height: 50%;
+            img{
+                height: 100%;
+                padding: 0;
+                width: 100%;
+            }
+        }
     }
     div>.ul1>li>.img3{
-        height: 163px;
-        width: 100%
+        width: 100%;
+        height: 100%;
+        vertical-align: middle;
     }
 </style>
 

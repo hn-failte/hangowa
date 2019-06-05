@@ -18,24 +18,27 @@ export default {
 
 <style lang="scss" scoped>
     .picbtn{
-        height: 120px;
+        height: 2rem;
         width: 100%;
     }
     .picbtn>ul{
+        height: 2rem;
         width: 100%;
         display: flex;
     }
     .picbtn>ul>li{
         flex: 1;
-        margin-top: 20px;
+        margin-top: .4rem;
+        width: 1rem;
+        height: 1rem;
     }
     .picbtn>ul>li>span{
-        font-size: 40px;
+        font-size: 0.6rem;
         display: inline-block;
-        padding: 8px;
         border-radius: 50%;
-        width: 40px;
-        height: 40px;
+        width: 1rem;
+        height: 1rem;
+        line-height: 1rem;
     }
     .picbtn>ul>li>.icon-shangcheng{
         background-color: rgb(241, 174, 149);
@@ -47,7 +50,7 @@ export default {
         background-color: rgb(194, 250, 194);
     }
     .picbtn>ul>li>p{
-        margin-top: 10px;
-        font-size: 14px;
+        font-size: 0.3rem;
+        margin-top: 0.1rem;
     }
 </style>
