@@ -26,6 +26,22 @@ export default {
     components: {
         GoodInfo: ()=>import("@components/DetailChildren/GoodInfo"),
         GoodDesc: ()=>import("@components/DetailChildren/GoodDesc")
+    },
+    beforeRouteUpdate(to, from, next){
+        this.$store.commit("detail/init");
+        if(to.query.type == "goods"){
+            let data = to.query.data;
+            this.$store.dispatch("detail/acGetGoodDetail", data);
+            document.documentElement.scrollTop = 0;
+            next()
+        }
+        else if(to.query.type == "url"){
+            location.href = to.query.data
+        }
+        else{
+            // eslint-disable-next-line
+            console.log("Wrong Type")
+        }
     }
 }
 </script>
