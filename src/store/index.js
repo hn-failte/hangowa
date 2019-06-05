@@ -4,6 +4,7 @@ import car from './car'
 import discover from './discover'
 import search from './search'
 import detail from './detail'
+import index from './index/index.js'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -11,6 +12,7 @@ export default new Vuex.Store({
 		car,
 		discover,
 		search,
-		detail
+		detail,
+		index
 	}
 })

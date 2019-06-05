@@ -117,8 +117,22 @@
 </template>
 
 <script>
+// import bscroll from 'better-scroll'
 export default {
-    
+    data(){
+        return {
+
+        }
+    },
+    // beforeRouteEnter(to, from, next){
+    //     console.log(to) // 要去哪
+    //     console.log(from) // 从哪来
+    //     alert('请登录')
+    //     next('./Login')
+    // }
+    // beforeRouteLeave(to, from, next){
+        
+    // }
 }
 </script>
 

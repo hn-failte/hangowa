@@ -3,7 +3,7 @@
             <ul>
                 <li class="li1"><img src="../../assets/home_logo.png"></li>
                 <li class="iconfont li2"><router-link tag="input" to="/search" type="text" class="text"></router-link></li>
-                <li class="iconfont li3">&#xe643;</li>
+                <router-link tag="li" to="/shopCar" class="iconfont li3">&#xe643;</router-link>
                 <li class="iconfont fdj">&#xe611;</li>
             </ul>
         </header>
