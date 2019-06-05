@@ -29,7 +29,7 @@
         <dl class="rec-shop">
             <dt>店铺推荐</dt>
             <router-link tag="dd" :to="{name:'detail', query:{data: item.goods_id, type: 'goods'}}" v-for="(item, index) in goods_commend_list" :key="index">
-                <img :src="item.goods_image_url">
+                <img v-lazy="item.goods_image_url">
                 <p>{{item.goods_name}}</p>
                 <p>$<em>{{item.goods_promotion_price}}</em></p>
             </router-link>
@@ -197,6 +197,8 @@ article{
         }
         dd{
             width: 25%;
+            padding: .1rem;
+            box-sizing: border-box;
             height: 3rem;
             img{
                 width: 100%;

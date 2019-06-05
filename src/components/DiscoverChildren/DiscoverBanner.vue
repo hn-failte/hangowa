@@ -5,10 +5,10 @@
         </div>
         <div class="banner-main">
             <p class="top">
-                <router-link tag="img" :to="{name: 'detail', query: {data: item.data, type: item.type}}" :src="item.image" v-for="(item,index) in bannerTopList" :key="index"></router-link>
+                <router-link tag="img" :to="{name: 'detail', query: {data: item.data, type: item.type}}" v-lazy="item.image" v-for="(item,index) in bannerTopList" :key="index"></router-link>
             </p>
             <p class="bottom">
-                <router-link tag="img" :to="{name: 'detail', query: {data: item.data, type: item.type}}" :src="item.image" v-for="(item,index) in bannerBottomList" :key="index"></router-link>
+                <router-link tag="img" :to="{name: 'detail', query: {data: item.data, type: item.type}}" v-lazy="item.image" v-for="(item,index) in bannerBottomList" :key="index"></router-link>
             </p>
         </div>
     </section>

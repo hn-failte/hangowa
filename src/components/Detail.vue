@@ -14,6 +14,8 @@ export default {
         if(this.$route.query.type == "goods"){
             let data = this.$route.query.data;
             this.$store.dispatch("detail/acGetGoodDetail", data);
+            //开启动画
+            console.log('open');
         }
         else if(this.$route.query.type == "url"){
             location.href = this.$route.query.data
@@ -22,6 +24,9 @@ export default {
             // eslint-disable-next-line
             console.log("Wrong Type")
         }
+        this.$nextTick(()=>{
+            console.log('close');
+        })
     },
     components: {
         GoodInfo: ()=>import("@components/DetailChildren/GoodInfo"),
@@ -33,6 +38,8 @@ export default {
             let data = to.query.data;
             this.$store.dispatch("detail/acGetGoodDetail", data);
             document.documentElement.scrollTop = 0;
+            //开启动画
+            console.log('open');
             next()
         }
         else if(to.query.type == "url"){

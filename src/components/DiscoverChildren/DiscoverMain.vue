@@ -3,7 +3,7 @@
         <h3>精选专题商品</h3>
         <ul class="main-body">
             <router-link tag="li" class="contents" :to="{name: 'detail', query: {data: item.goods_id, type: 'goods'}}" v-for="(item, index) in topicGoodsList" :key="index">
-                <img :src="item.goods_image">
+                <img v-lazy="item.goods_image">
                 <p class="good-name">￥ {{item.goods_name}}</p>
                 <p class="good-price">￥ {{item.goods_price}}</p>
             </router-link>

@@ -1,6 +1,6 @@
 <template>
   <swiper :options="swiperOption" ref="mySwiper" @touchEnd="play">
-    <router-link tag="img" :to="{name: 'detail', query: {data: item.data, type: item.type}}" class="swiper-slide" v-for="(item, index) in swiperList" :src="item.image" :key="index"></router-link>
+    <router-link tag="img" :to="{name: 'detail', query: {data: item.data, type: item.type}}" class="swiper-slide" v-for="(item, index) in swiperList" v-lazy="item.image" :key="index"></router-link>
     <div class="swiper-pagination" slot="pagination"></div>
     <div class="swiper-button-prev" slot="button-prev" @click="prev"></div>
     <div class="swiper-button-next" slot="button-next" @click="next"></div>
