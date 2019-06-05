@@ -1,7 +1,7 @@
 <template>
     <ul class="search-body">
         <router-link tag="li" :to="{name: 'detail', query: {data: item.goods_id, type: 'goods'}}" v-for="(item, index) in goodsList" :key="index">
-            <img :src="item.goods_image_url">
+            <img v-lazy="item.goods_image_url">
             <p class="content-title">{{item.goods_name}}</p>
             <p class="content-price">
                 <span class="price"> {{item.goods_price}} </span>

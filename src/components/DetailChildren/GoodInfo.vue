@@ -1,7 +1,7 @@
 <template>
   <div class="good-header">
     <swiper :options="swiperOption" ref="mySwiper">
-      <img v-for="(item, index) in imgList" class="swiper-slide" :src="item" :key="index">
+      <img v-for="(item, index) in imgList" class="swiper-slide" v-lazy="item" :key="index">
       <div class="swiper-pagination" slot="pagination"></div>
       <a href="javascript: void(0);" class="iconfont favorate">&#xe654;</a>
     </swiper>
