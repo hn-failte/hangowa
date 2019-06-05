@@ -5,20 +5,25 @@
             <span class="hgLog">登录</span>
             <router-link to="./Register" class="hgReg" tag="span">注册</router-link>
         </div>
+        <div class="jul"></div>
         <div class="logInput">
             <div class="tex">
                 <label for>用户名:</label>
-                <input type="text" v-model='inpname' @blur="userShi">
+                <input type="text" v-model='inpname' @blur="userShi" placeholder="请输入用户名">
             </div>
             <p :class=className>{{username}}</p>
             <div class="pwd">
                 <label for>密 &nbsp; 码:</label>
-                <input type="password" v-model="inppwd" @blur="pwdShi">
+                <input type="password" v-model="inppwd" @blur="pwdShi" placeholder="请输入密码">
             </div>
             <p :class=pwdClassName>{{password}}</p>
-            <!-- <div class="denl" @touchenter="li">登录</div> -->
-            <v-touch class="denl" tag="div" v-on:tap="lilo">登录</v-touch>
         </div>
+        <div class="xieyi">
+            <v-touch :class="classNameg" tag="span" v-on:tap="gouf">{{gou}}</v-touch>
+            <v-touch class="tongyi" tag="span" v-on:tap="gouf">七天自动登录</v-touch>
+            <span class="userReg">忘记密码?</span>
+        </div>
+        <v-touch class="denl" tag="div" v-on:tap="lilo">登录</v-touch>
     </div>
 </template>
 
@@ -36,25 +41,26 @@ export default {
             inppwd: '',
             password: '',
             className: '',
-            pwdClassName: ''
+            pwdClassName: '',
+            gou: '',
+            classNameg: ['gou']
         };
     },
     methods: {
         lilo() {
-            // async function fun(){
-            //     console.log(1)
-            //     let data = await login.query()
-            //     console.log(data)
-            // }
-            // fun()
+
+        },
+         gouf(){
+            if(this.gou === ''){
+                this.gou = '✔'
+                this.classNameg = ['gou', 'gousuc']
+            }else if(this.gou === '✔'){
+                this.gou = ''
+                this.classNameg = ['gou', 'goufail']
+            }
         },
         userShi(){
             if (/^1[34578]\d{9}$/.test(this.inpname)) {
-                // alert("登录成功");
-                // this.$toast({
-                //     message: "登录成功",
-                //     position: "bottom"
-                // });
                 this.username = '用户名可用'
                 this.className = 'suc'
             }else if(this.inpname === ''){
@@ -103,16 +109,19 @@ export default {
             color: red;
         }
     }
+    .jul{
+        height: 0.4rem;
+        background: white;
+    }
     .logInput {
-        height: 5rem;
-        // background: pink;
+        height: 3rem;
+        background: white;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
-        margin-top: 0.4rem;
         p{
-            // height: 0.3rem;
+            height: 0.4rem;
             width: 4rem;
             font-size: 0.3rem;
             // background: red;
@@ -144,16 +153,51 @@ export default {
         input {
             height: 0.6rem;
             width: 4rem;
-            border: 0.01rem solid black;
+            border: 0.01rem solid rgb(37, 37, 37);
         }
-        .denl {
-            font-size: 0.4rem;
-            width: 5.5rem;
-            height: 0.6rem;
-            background: skyblue;
-            border-radius: 0.3rem;
+    }
+    .xieyi{
+        height: 0.5rem;
+        display: flex;
+        width: 5.74rem;
+        margin: 0.2rem auto 0;
+        font-size: 0.24rem;
+        align-items: center;
+        .gou{
+            height: 0.3rem;
+            width: 0.3rem;
+            border: 0.01rem solid rgb(158, 158, 158);
+            border-radius: 50%;
             color: white;
+            
         }
+        .gousuc{
+            background: rgb(72, 207, 174);
+            border: 0.01rem solid rgb(72, 207, 174);
+        }
+        .goufail{
+            background: white;
+        }
+        .tongyi{
+            margin: 0 0.1rem;
+        }
+        .userReg{
+            color: #5D9CEC;
+            margin: 0 0 0 2rem;
+        }
+        // span{
+        //     background: red;
+        // }
+    }
+    .denl {
+        font-size: 0.4rem;
+        width: 5.5rem;
+        height: 0.7rem;
+        background: skyblue;
+        border-radius: 0.35rem;
+        color: white;
+        margin: 0.4rem auto;
+        line-height: 0.7rem;
     }
 }
 </style>
