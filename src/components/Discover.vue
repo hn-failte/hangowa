@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Loading v-if="lodingAnimRun"></Loading>
     <DiscoverHeader></DiscoverHeader>
     <DiscoverSwiper></DiscoverSwiper>
     <DiscoverBanner></DiscoverBanner>
@@ -16,6 +17,11 @@ export default {
   name: "Discover",
   created() {
     this.$store.dispatch("discover/acGetLists")
+  },
+  computed: {
+    ...Vuex.mapState({
+      lodingAnimRun: state => state.discover.lodingAnimRun
+    })
   },
   components: { //子组件懒加载
       DiscoverHeader: ()=>import("@components/DiscoverChildren/DiscoverHeader"),

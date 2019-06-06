@@ -3,9 +3,9 @@
         <ul>
             <li class="li1"><div>超值特惠</div></li>
             <li class="li2">
-                <img src="../../assets/s0_06125450960431206.jpg">
-                <img src="../../assets/s0_06069971007810722.jpg">
-                <img src="../../assets/s0_06064918250540013.jpg">
+                <router-link tag="img" :to="{name:'detail',query:{data:item.data,type:item.type}}"
+                    v-for="(item,index) in TehuiList" :key="index"
+                    :src="item.image"></router-link>
             </li>
         </ul>
     </div>
@@ -13,8 +13,14 @@
 
 
 <script>
+import Vuex from "vuex";
 export default {
-    
+    name:"IndexTehui",
+    computed: {
+        ...Vuex.mapState({
+            TehuiList: state=>state.index.TehuiList
+        }),
+    }
 }
 </script>
 
@@ -22,15 +28,21 @@ export default {
 <style lang="scss" scoped>
     div{
         height: 2.7rem;
+        width: 100%;
+        margin-top: 0.18rem;
     }
     div>ul>.li1>div{
-        height: 0.3rem;
-        line-height: 0.3rem;
-        width: 1.1rem;
+        height: 0.4rem;
+        line-height: 0.4rem;
+        width: 100%;
+        text-align: left;
         margin-left: 0.2rem;
         border-left: red 3px solid;
     }
+    div>ul>.li2{
+        width: 100%;
+    }
     div>ul>.li2>img{
-        width: 2.3rem;
+        width: 33%;
     }
 </style>

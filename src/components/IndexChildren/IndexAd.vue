@@ -3,20 +3,45 @@
         <ul class="ul1">
             <li class="li1">
                 <ul class="ul2">
-                    <li><img class="img1" src="../../assets/s0_06064914275721971.png"></li>
-                    <li><img class="img2" src="../../assets/s0_06064914487884924.png"></li>
+                    <li>
+                        <router-link tag="img" :to="{name:'detail',query:{data:AdList.rectangle1_data,type:AdList.rectangle1_type}}"
+                         class="img1"
+                        :src="AdList.rectangle1_image"></router-link>
+                    </li>
+
+
+                    <li>
+                        <router-link tag="img" :to="{name:'detail',query:{data:AdList.rectangle2_data,type:AdList.rectangle2_type}}"
+                         class="img2"
+                        :src="AdList.rectangle2_image"></router-link>
+                    </li>
                     
                 </ul>
             </li>
-            <li class="li1"><img class="img3" src="../../assets/s0_06064914759580108.png"></li>
+            <li class="li1">
+                <router-link tag="img" :to="{name:'detail',query:{data:AdList.square_data,type:AdList.square_type}}"
+                         class="img3"
+                        :src="AdList.square_image"></router-link>
+            </li>
         </ul>
     </div>
 </template>
 
 
 <script>
+import Vuex from "vuex";
+
 export default {
-    name: "IndexAd"
+    name: "IndexAd",
+    computed: {
+        ...Vuex.mapState({
+        AdList: state=>state.index.AdList
+        
+    }),
+},
+created(){
+    console.log(this)
+}
 }
 </script>
 
@@ -24,26 +49,38 @@ export default {
 
 <style lang="scss" scoped>
     div{
-        height: 185px;
+        height: 3.7rem;
+        width: 100%;
     }
     div>.ul1{
+        width: 100%;
         display: flex;
         border-bottom: 10px solid rgb(219, 218, 218);
     }
     div>.ul1>.li1{
         flex: 1;
+        width: 50%;
+        height: 3.7rem;
+        line-height: 3.7rem;
     }
-    div>.ul1>.li1>.ul2>li>.img1{
-        width: 200px;
-        height: 80px;
-    }
-    div>.ul1>.li1>.ul2>li>.img2{
-        width: 200px;
-        height: 80px;
+    div>.ul1>.li1>.ul2{
+        line-height: 1.8rem;
+        height: 3.7rem;
+        box-sizing: border-box;
+        li{
+            padding: 0;
+            height: 50%;
+            img{
+                height: 100%;
+                padding: 0;
+                width: 100%;
+            }
+        }
     }
     div>.ul1>li>.img3{
-        height: 160px;
-        width: 170px;
+        width: 100%;
+        height: 100%;
+        vertical-align: middle;
     }
 </style>
 

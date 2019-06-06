@@ -4,7 +4,8 @@ export default [
     name: "index",
     component: () => import("@components/Index.vue"),
     meta: {
-      showAppNav: true
+      showAppNav: true,
+      title: "主页"
     }
   },
   {
@@ -12,7 +13,8 @@ export default [
     name: "discover",
     component: () => import("@components/Discover.vue"),
     meta: {
-      showAppNav: true
+      showAppNav: true,
+      title: "发现"
     }
   },
   {
@@ -20,7 +22,8 @@ export default [
     name: "my",
     component: () => import("@components/My.vue"),
     meta: {
-      showAppNav: true
+      showAppNav: true,
+      title: "我的商城"
     }
   }
 ];

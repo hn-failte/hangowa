@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div class="index">
+        <Loading v-if="lodingAnimRun"></Loading>
         <IndexHeader></IndexHeader>
         <IndexLunbo></IndexLunbo>
         <IndexPicbtn></IndexPicbtn>
@@ -11,8 +12,23 @@
 </template>
 
 <script>
+import Vuex from 'vuex'
+import index from "@api/index"
 export default {
     name: "Index",
+    created() {
+        // async function fun(){
+        //     let data = await index.indexData()
+        //     console.log(data)
+        // }
+        // fun()
+        this.$store.dispatch("index/acGetIndexData")
+    },
+    computed: {
+        ...Vuex.mapState({
+        lodingAnimRun: state => state.index.lodingAnimRun
+        })
+    },
     components: {
         IndexHeader: ()=>import("./IndexChildren/IndexHeader.vue"),
         IndexLunbo: ()=>import("./IndexChildren/IndexLunbo.vue"),
@@ -26,5 +42,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    
+    .index{
+        position: relative;
+        z-index: -10
+    }
 </style>

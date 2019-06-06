@@ -4,7 +4,8 @@ export default [
     name: "search",
     component: () => import("@components/Search.vue"),
     meta: {
-      showAppNav: true
+      showAppNav: true,
+      title: "商品搜索"
     }
   },
   {
@@ -12,7 +13,8 @@ export default [
     name: "searchlist",
     component: () => import("@components/SearchList.vue"),
     meta: {
-      showAppNav: true
+      showAppNav: true,
+      title: "商品列表"
     }
   },
   {
@@ -20,7 +22,8 @@ export default [
     name: "detail",
     component: () => import("@components/Detail.vue"),
     meta: {
-      showAppNav: true
+      showAppNav: false,
+      title: "商品详情"
     }
   }
 ];

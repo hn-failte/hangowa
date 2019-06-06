@@ -1,17 +1,21 @@
 <template>
     <div class="detail">
+        <Loading v-if="lodingAnimRun"></Loading>
         <GoodInfo></GoodInfo>
         <GoodDesc></GoodDesc>
+        <GoodOperation></GoodOperation>
     </div>
 </template>
 
 <script>
 // 商品详情
+// import { Indicator } from 'mint-ui';
+import Vuex from 'vuex'
 export default {
     name: "Detail",
     created() {
-        this.$store.commit("detail/init");
         if(this.$route.query.type == "goods"){
+            this.$store.commit("detail/init");
             let data = this.$route.query.data;
             this.$store.dispatch("detail/acGetGoodDetail", data);
         }
@@ -23,9 +27,31 @@ export default {
             console.log("Wrong Type")
         }
     },
+    computed: {
+        ...Vuex.mapState({
+            lodingAnimRun: state => state.detail.lodingAnimRun
+        })
+    },
     components: {
         GoodInfo: ()=>import("@components/DetailChildren/GoodInfo"),
-        GoodDesc: ()=>import("@components/DetailChildren/GoodDesc")
+        GoodDesc: ()=>import("@components/DetailChildren/GoodDesc"),
+        GoodOperation: ()=>import("@components/DetailChildren/GoodOperation")
+    },
+    beforeRouteUpdate(to, from, next){
+        this.$store.commit("detail/init");
+        if(to.query.type == "goods"){
+            let data = to.query.data;
+            this.$store.dispatch("detail/acGetGoodDetail", data);
+            document.documentElement.scrollTop = 0;
+            next()
+        }
+        else if(to.query.type == "url"){
+            location.href = to.query.data
+        }
+        else{
+            // eslint-disable-next-line
+            console.log("Wrong Type")
+        }
     }
 }
 </script>

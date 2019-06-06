@@ -1,6 +1,7 @@
 export default {
-    infoList: [],
-    hasResult: false,
+    swiperList: [],
+    AdList: [],
+    TehuiList: [],
     goodsList: [],
     lodingAnimRun: true
 }

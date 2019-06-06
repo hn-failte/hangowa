@@ -4,7 +4,8 @@ export default [
     name: "shopCar",
     component: () => import("@components/shopCar.vue"),
     meta: {
-      showAppNav: false
+      showAppNav: false,
+      title: "购物车"
     }
   }
 ];

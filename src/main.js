@@ -12,10 +12,18 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 Vue.use(MintUI)
 
+import Loading from '@common/Loading'
+Vue.component("Loading", Loading)
+
 Vue.config.productionTip = false
+
+router.beforeEach((to, from, next)=>{ //全局路由守卫设置标题
+  window.document.title = to.meta.title
+  next();
+})
 
 new Vue({
   router,
   store,
   render: h => h(App)
-}).$mount('#app')
+}).$mount('#app');

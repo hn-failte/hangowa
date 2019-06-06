@@ -46,7 +46,10 @@ export default {
 	background: rgba(102,102,102,.8)
 	li
 		flex: 1
+		&>.iconfont
+			font-size: .3rem
 		&>p
+			font-size: .3rem
 			&:first-of-type
 				height: .6rem
 				line-height: .6rem
