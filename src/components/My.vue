@@ -361,7 +361,7 @@ export default {
                 height: 0.4rem;
                 a{
                     color: #111;
-                    // font-size: 0.24rem;
+                    font-size: 0.24rem;
                 }
             }
             .navPhoto{

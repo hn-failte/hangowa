@@ -177,6 +177,7 @@ export default {
             height: 0.6rem;
             width: 4rem;
             border: 0.01rem solid black;
+            font-size: 0.24rem;
         }
     }
     .xieyi{
