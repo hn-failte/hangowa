@@ -35,13 +35,9 @@ export default {
     name: "IndexAd",
     computed: {
         ...Vuex.mapState({
-        AdList: state=>state.index.AdList
-        
-    }),
-},
-created(){
-    console.log(this)
-}
+            AdList: state=>state.index.AdList
+        }),
+    },
 }
 </script>
 

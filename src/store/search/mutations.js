@@ -15,5 +15,8 @@ export default {
         else state.hasResult = true
         state.goodsList = list;
     },
-    
+    muClearHistory(state){
+        state.historyList = [];
+        localStorage.clear();
+    }
 }

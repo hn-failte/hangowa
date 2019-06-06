@@ -1,6 +1,8 @@
 <template>
     <div class="detail">
         <Loading v-if="lodingAnimRun"></Loading>
+        <PlaceChoose></PlaceChoose>
+        <GoodsChoose></GoodsChoose>
         <GoodInfo></GoodInfo>
         <GoodDesc></GoodDesc>
         <GoodOperation></GoodOperation>
@@ -35,7 +37,9 @@ export default {
     components: {
         GoodInfo: ()=>import("@components/DetailChildren/GoodInfo"),
         GoodDesc: ()=>import("@components/DetailChildren/GoodDesc"),
-        GoodOperation: ()=>import("@components/DetailChildren/GoodOperation")
+        GoodOperation: ()=>import("@components/DetailChildren/GoodOperation"),
+        PlaceChoose: ()=>import("@components/DetailChildren/PlaceChoose"),
+        GoodsChoose: ()=>import("@components/DetailChildren/GoodsChoose")
     },
     beforeRouteUpdate(to, from, next){
         this.$store.commit("detail/init");

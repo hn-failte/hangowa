@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="tehui">
         <ul>
             <li class="li1"><div>超值特惠</div></li>
             <li class="li2">
@@ -26,23 +26,40 @@ export default {
 
 
 <style lang="scss" scoped>
-    div{
-        height: 2.7rem;
+    div.tehui{
+        height: 3rem;
         width: 100%;
-        margin-top: 0.18rem;
-    }
-    div>ul>.li1>div{
-        height: 0.4rem;
-        line-height: 0.4rem;
-        width: 100%;
-        text-align: left;
-        margin-left: 0.2rem;
-        border-left: red 3px solid;
-    }
-    div>ul>.li2{
-        width: 100%;
-    }
-    div>ul>.li2>img{
-        width: 33%;
+        margin: .2rem 0;
+        ul{
+            height: 3rem;
+            margin: 0;
+            .li1{
+                padding-left: .2rem;
+                box-sizing: border-box;
+                height: 0.6rem;
+                line-height: 0.6rem;
+                background: #fff;
+                div{
+                    display: inline-block;
+                    vertical-align: middle;
+                    height: 0.4rem;
+                    line-height: 0.4rem;
+                    width: 100%;
+                    text-align: left;
+                    padding-left: 0.2rem;
+                    border-left: red .1rem solid;
+                    box-sizing: border-box;
+                }
+            }
+            .li2{
+                height: 2.4rem;
+                width: 100%;
+                display: flex;
+                img{
+                    height: 2.4rem;
+                    flex: 1;
+                }
+            }
+        }
     }
 </style>

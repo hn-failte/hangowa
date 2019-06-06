@@ -39,5 +39,11 @@ export default {
             evaluation_count: list.goods_info.evaluation_count
         };
         state.goods_commend_list = list.goods_commend_list; //商品推荐
+    },
+    toggleRightPopup(state, val){
+        state.choosePlace = !!val
+    },
+    toggleBottomPopup(state, val){
+        state.chooseGoods = !!val
     }
 }
