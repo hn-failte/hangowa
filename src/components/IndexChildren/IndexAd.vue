@@ -6,14 +6,14 @@
                     <li>
                         <router-link tag="img" :to="{name:'detail',query:{data:AdList.rectangle1_data,type:AdList.rectangle1_type}}"
                          class="img1"
-                        :src="AdList.rectangle1_image"></router-link>
+                        v-lazy="AdList.rectangle1_image"></router-link>
                     </li>
 
 
                     <li>
                         <router-link tag="img" :to="{name:'detail',query:{data:AdList.rectangle2_data,type:AdList.rectangle2_type}}"
                          class="img2"
-                        :src="AdList.rectangle2_image"></router-link>
+                        v-lazy="AdList.rectangle2_image"></router-link>
                     </li>
                     
                 </ul>
@@ -21,7 +21,7 @@
             <li class="li1">
                 <router-link tag="img" :to="{name:'detail',query:{data:AdList.square_data,type:AdList.square_type}}"
                          class="img3"
-                        :src="AdList.square_image"></router-link>
+                        v-lazy="AdList.square_image"></router-link>
             </li>
         </ul>
     </div>

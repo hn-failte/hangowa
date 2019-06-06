@@ -5,7 +5,7 @@
             <li class="li2">
                 <router-link tag="img" :to="{name:'detail',query:{data:item.data,type:item.type}}"
                     v-for="(item,index) in TehuiList" :key="index"
-                    :src="item.image"></router-link>
+                    v-lazy="item.image"></router-link>
             </li>
         </ul>
     </div>

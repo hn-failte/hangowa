@@ -54,5 +54,6 @@
         background-color: red;
         border: 0;
         color: white;
+        font-size: 0.3rem;
     }
 </style>

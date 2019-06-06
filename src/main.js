@@ -2,6 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './routers/index'
 import store from './store/index.js'
+import axios from "axios";
+Vue.prototype.$http = axios;
+
 
 //引入vue-touch
 import VueTouch from 'vue-touch'
