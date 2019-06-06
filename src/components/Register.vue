@@ -5,24 +5,30 @@
             <span class="hgLog">注册</span>
             <router-link to="./Login" class="hgReg" tag="span">登录</router-link>
         </div>
+        <div class="regjl"></div>
         <div class="regInput">
             <div class="tex">
                 <label for>用户名:</label>
-                <input type="text" v-model="username" @blur="userShi">
+                <input type="text" v-model="username" @blur="userShi" placeholder="请输入用户名">
             </div>
             <p :class="usernameClass">{{usernamePele}}</p>
             <div class="pwd">
                 <label for>密 &nbsp; 码:</label>
-                <input type="password" v-model="pwd" @blur="pwdShi">
+                <input type="password" v-model="pwd" @blur="pwdShi" placeholder="请输入密码">
             </div>
             <p :class="pwdClass">{{pwdPele}}</p>
             <div class="pwds">
                 <label for>确认密码:</label>
-                <input type="password" v-model="pwds" @blur="pwdsShi">
+                <input type="password" v-model="pwds" @blur="pwdsShi" placeholder="再次输入密码">
             </div>
             <p :class="pwdsClass">{{pwdsPele}}</p>
-            <div class="regl">注册</div>
         </div>
+        <div class="xieyi">
+            <v-touch :class="className" tag="span" v-on:tap="gouf">{{gou}}</v-touch>
+            <v-touch class="tongyi" tag="span" v-on:tap="gouf">同意</v-touch>
+            <span class="userReg">用户注册协议</span>
+        </div>
+        <div class="regl">注册</div>
     </div>
 </template>
 
@@ -38,10 +44,21 @@ export default {
             pwdClass: "",
             pwds: "",
             pwdsPele: "",
-            pwdsClass: ""
+            pwdsClass: "",
+            gou: '',
+            className: ['gou']
         };
     },
     methods: {
+        gouf(){
+            if(this.gou === ''){
+                this.gou = '✔'
+                this.className = ['gou', 'gousuc']
+            }else if(this.gou === '✔'){
+                this.gou = ''
+                this.className = ['gou', 'goufail']
+            }
+        },
         userShi() {
             if (/^1[34578]\d{9}$/.test(this.username)) {
                 this.usernamePele = "用户名可用";
@@ -107,16 +124,21 @@ export default {
             color: red;
         }
     }
+    .regjl{
+        height: 0.4rem;
+        background: white;
+    }
     .regInput {
-        height: 5rem;
-        // background: pink;
+        height: 4rem;
+        background: white;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
-        margin-top: 0.4rem;
         p{
             font-size: 0.3rem;
+            height: 0.4rem;
+            width: 4rem;
         }
         .suc {
             color: green;
@@ -156,14 +178,46 @@ export default {
             width: 4rem;
             border: 0.01rem solid black;
         }
-        .regl {
-            font-size: 0.4rem;
-            width: 5.5rem;
-            height: 0.6rem;
-            background: skyblue;
-            border-radius: 0.3rem;
+    }
+    .xieyi{
+        height: 0.5rem;
+        display: flex;
+        width: 5.74rem;
+        margin: 0.2rem auto 0;
+        // justify-content: space-around;
+        align-items: center;
+        font-size: 0.24rem;
+        .gou{
+            height: 0.3rem;
+            width: 0.3rem;
+            border: 0.01rem solid rgb(158, 158, 158);
+            border-radius: 50%;
             color: white;
+            
         }
+        .gousuc{
+            background: rgb(72, 207, 174);
+            border: 0.01rem solid rgb(72, 207, 174);
+        }
+        .goufail{
+            background: white;
+        }
+        .tongyi{
+            margin: 0 0.1rem;
+        }
+        .userReg{
+            color: #5D9CEC;
+        }
+    }
+    .regl {
+        font-size: 0.4rem;
+        width: 5.5rem;
+        height: 0.7rem;
+        background: skyblue;
+        border-radius: 0.35rem;
+        color: white;
+        margin: 0.4rem auto;
+        line-height: 0.7rem;
     }
 }
 </style>

@@ -3,5 +3,6 @@ export default {
     bannerTopList: [],
     bannerBottomList: [],
     topicGoodsList: [],
-    globalGoodsList: []
+    globalGoodsList: [],
+    lodingAnimRun: true
 }

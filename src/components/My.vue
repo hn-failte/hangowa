@@ -8,7 +8,7 @@
                 </div>
                 <div class="login">
                     <router-link to="./login" class="iconfont icon-wo" tag='span'></router-link>
-                    <span class="loginDij">点击登录</span>
+                    <router-link to="./login" class="loginDij" tag='span'>点击登录</router-link>
                 </div>
                 <div class="collection">
                     <li>
@@ -138,7 +138,7 @@ export default {
 
 <style lang="scss" scoped>
     #mall{
-        background: rgb(238, 237, 237);
+        background: rgb(241, 241, 241);
         .mallTop{
             height: 4.84rem;
             background: rgb(99, 176, 235);
@@ -361,6 +361,7 @@ export default {
                 height: 0.4rem;
                 a{
                     color: #111;
+                    // font-size: 0.24rem;
                 }
             }
             .navPhoto{

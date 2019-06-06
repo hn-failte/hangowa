@@ -82,8 +82,12 @@ ul.search-body
                     line-height: .4rem
                     &:first-of-type
                         width: 3rem
+                        font-size: .3rem
+                        i
+                            font-size: .3rem
                     &:last-of-type
                         width: 3rem
+                        font-size: .3rem
                         white-space: nowrap
                         text-overflow: ellipsis
                         overflow: hidden
