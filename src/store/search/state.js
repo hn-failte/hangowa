@@ -2,5 +2,6 @@ export default {
     infoList: [],
     hasResult: false,
     goodsList: [],
-    lodingAnimRun: true
+    lodingAnimRun: true,
+    historyList: localStorage.getItem('historyList') ? JSON.parse(localStorage.getItem('historyList')) : []
 }
