@@ -1,21 +1,23 @@
 <template>
     <div class="detail">
+        <Loading v-if="lodingAnimRun"></Loading>
         <GoodInfo></GoodInfo>
         <GoodDesc></GoodDesc>
+        <GoodOperation></GoodOperation>
     </div>
 </template>
 
 <script>
 // 商品详情
+// import { Indicator } from 'mint-ui';
+import Vuex from 'vuex'
 export default {
     name: "Detail",
     created() {
-        this.$store.commit("detail/init");
         if(this.$route.query.type == "goods"){
+            this.$store.commit("detail/init");
             let data = this.$route.query.data;
             this.$store.dispatch("detail/acGetGoodDetail", data);
-            //开启动画
-            console.log('open');
         }
         else if(this.$route.query.type == "url"){
             location.href = this.$route.query.data
@@ -24,13 +26,16 @@ export default {
             // eslint-disable-next-line
             console.log("Wrong Type")
         }
-        this.$nextTick(()=>{
-            console.log('close');
+    },
+    computed: {
+        ...Vuex.mapState({
+            lodingAnimRun: state => state.detail.lodingAnimRun
         })
     },
     components: {
         GoodInfo: ()=>import("@components/DetailChildren/GoodInfo"),
-        GoodDesc: ()=>import("@components/DetailChildren/GoodDesc")
+        GoodDesc: ()=>import("@components/DetailChildren/GoodDesc"),
+        GoodOperation: ()=>import("@components/DetailChildren/GoodOperation")
     },
     beforeRouteUpdate(to, from, next){
         this.$store.commit("detail/init");
@@ -38,8 +43,6 @@ export default {
             let data = to.query.data;
             this.$store.dispatch("detail/acGetGoodDetail", data);
             document.documentElement.scrollTop = 0;
-            //开启动画
-            console.log('open');
             next()
         }
         else if(to.query.type == "url"){

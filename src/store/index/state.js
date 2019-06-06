@@ -3,4 +3,5 @@ export default {
     AdList: [],
     TehuiList: [],
     goodsList: [],
+    lodingAnimRun: true
 }

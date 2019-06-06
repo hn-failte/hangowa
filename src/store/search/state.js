@@ -1,5 +1,6 @@
 export default {
     infoList: [],
     hasResult: false,
-    goodsList: []
+    goodsList: [],
+    lodingAnimRun: true
 }

@@ -1,5 +1,6 @@
 <template>
     <div class="searchList">
+        <Loading v-if="lodingAnimRun"></Loading>
         <SearchListHeader></SearchListHeader>
         <SearchListNav></SearchListNav>
         <SearchListMain v-if="hasResult"></SearchListMain>
@@ -23,6 +24,7 @@ export default {
     },
     computed: {
         ...Vuex.mapState({
+            lodingAnimRun: state => state.search.lodingAnimRun,
             hasResult: state=>state.search.hasResult
         })
     }

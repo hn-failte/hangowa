@@ -31,9 +31,10 @@
             <router-link tag="dd" :to="{name:'detail', query:{data: item.goods_id, type: 'goods'}}" v-for="(item, index) in goods_commend_list" :key="index">
                 <img v-lazy="item.goods_image_url">
                 <p>{{item.goods_name}}</p>
-                <p>$<em>{{item.goods_promotion_price}}</em></p>
+                <p>$ <em>{{item.goods_promotion_price}}</em></p>
             </router-link>
         </dl>
+        <div class="moreDetail">点击查看商品详情</div>
         <mt-popup v-model="popupRight" position="right" modal="true" closeOnClickModal="true">
             <a href="javascript: void(0);" @click="popupRightToggle">返回</a>
         </mt-popup>
@@ -137,6 +138,7 @@ article{
         text-align: left;
     }
     p.selected{
+        font-size: .25rem;
         padding: .1rem;
         box-sizing: border-box;
         margin: .2rem 0;
@@ -147,6 +149,7 @@ article{
         background: #fff url('../../assets/common/arrow_right.png') no-repeat 95% center;
         background-size: .4rem;
         i{
+            font-size: .25rem;
             display: inline-block;
             margin: 0 .1rem;
             height: .5rem;
@@ -177,6 +180,24 @@ article{
             line-height: 1rem;
             display: flex;
             justify-content: space-around;
+            li{
+                span{
+                    font-size: .3rem;
+                    color: gray;
+                }
+                em{
+                    font-size: .3rem;
+                    color: red;
+                    font-weight: bold;
+                    margin: .1rem;
+                }
+                i{
+                    font-size: .25rem;
+                    background: #f00;
+                    color: #fff;
+                    padding: .05rem;
+                }
+            }
         }
     }
     .rec-shop{
@@ -207,9 +228,8 @@ article{
             p{
                 width: 100%;
                 height: .5rem;
-                text-overflow: ellipsis;
                 overflow: hidden;
-                font-size: .2rem;
+                font-size: .22rem;
                 text-align: left;
                 &:first-of-type{
                     line-height: .25rem;
@@ -218,11 +238,20 @@ article{
                 &:last-of-type{
                     font-size: .3rem;
                     color: #333;
+                    em{
+                        font-size: .3rem;
+                    }
                 }
             }
         }
     }
-
+    div.moreDetail{
+        height: 1rem;
+        width: 100%;
+        line-height: 1rem;
+        color: #999;
+        font-size: .3rem;
+    }
 
 
 

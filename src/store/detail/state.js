@@ -4,5 +4,6 @@ export default {
     goods_info: {},
     store_info: {},
     goods_evaluate_info: {},
-    goods_commend_list: []
+    goods_commend_list: [],
+    lodingAnimRun: true
 }

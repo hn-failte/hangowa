@@ -58,6 +58,7 @@ aside
         height: .8rem
         line-height: .6rem
         width: 2rem
+        font-size: .3rem
         margin: 0 auto
         padding: .1rem
         border-radius: .1rem

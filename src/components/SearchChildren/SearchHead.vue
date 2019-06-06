@@ -2,7 +2,7 @@
     <header>
         <a href="javascript: void(0)" @click="backTop" class="backTop"></a>
         <input type="search" v-model="keyword" placeholder="请输入搜索关键字" autofocus="autofocus">
-        <router-link tag="a" :to="{name: 'searchlist', query: {keyword: keyword}}" class="more" href="javascript: void(0)">搜索</router-link>
+        <router-link tag="a" :to="{name: 'searchlist', query: {keyword: keyword}}" class="search" href="javascript: void(0)">搜索</router-link>
     </header>
 </template>
 
@@ -60,7 +60,8 @@ header
         height: 100%
         background: url("../../assets/common/backTop.png") no-repeat center
         background-size: .3rem
-    a.more
+    a.search
+        font-size: .25rem
         display: block
         text-align: center
         width: 1rem
@@ -72,4 +73,5 @@ header
         vertical-align: middle
         height: .6rem
         border: none
+        font-size: .3rem
 </style>
