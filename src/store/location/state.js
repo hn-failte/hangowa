@@ -1,3 +1,4 @@
 export default {
-    provinceList: []
+    provinceList: [],
+    urlId: []
 }
