@@ -29,7 +29,7 @@ export default {
     },
     methods: {
         ...Vuex.mapMutations({
-            toggleBottomPopup: "detail/toggleBottomPopup"
+            toggleBottomPopup: "detail/muToggleBottomPopup"
         })
     },
 }

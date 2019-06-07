@@ -40,10 +40,10 @@ export default {
         };
         state.goods_commend_list = list.goods_commend_list; //商品推荐
     },
-    toggleRightPopup(state, val){
+    muToggleRightPopup(state, val){
         state.choosePlace = !!val
     },
-    toggleBottomPopup(state, val){
+    muToggleBottomPopup(state, val){
         state.chooseGoods = !!val
     }
 }

@@ -7,5 +7,6 @@ export default {
     goods_commend_list: [],
     lodingAnimRun: true,
     chooseGoods: false,
-    choosePlace: false
+    choosePlace: false,
+    timer: null
 }

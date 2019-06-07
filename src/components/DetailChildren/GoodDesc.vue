@@ -54,8 +54,10 @@ export default {
     },
     methods: {
         ...Vuex.mapMutations({
-            toggleRightPopup: "detail/toggleRightPopup",
-            toggleBottomPopup: "detail/toggleBottomPopup"
+            toggleBottomPopup: "detail/muToggleBottomPopup"
+        }),
+        ...Vuex.mapActions({
+            toggleRightPopup: "detail/acToggleRightPopup"
         })
     },
 }

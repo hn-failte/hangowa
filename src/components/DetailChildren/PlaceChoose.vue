@@ -28,8 +28,8 @@ export default {
         }
     },
     methods: {
-        ...Vuex.mapMutations({
-            toggleRightPopup: "detail/toggleRightPopup"
+        ...Vuex.mapActions({
+            toggleRightPopup: "detail/acToggleRightPopup"
         })
     },
 }
