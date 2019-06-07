@@ -27,7 +27,6 @@ export default{
 
 <style lang="scss" scoped>
     dl{
-        margin: 0.4rem 0;
         width: 100%;
         display: flex;
         flex-wrap: wrap;

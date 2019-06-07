@@ -5,6 +5,8 @@ import discover from './discover'
 import search from './search'
 import detail from './detail'
 import index from './index/index.js'
+import location from './location'
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -13,6 +15,10 @@ export default new Vuex.Store({
 		discover,
 		search,
 		detail,
-		index
+		index,
+		location
+	},
+	state: {
+		timer: null
 	}
 })

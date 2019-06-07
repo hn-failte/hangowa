@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="content">
-            <div class="googsList" v-if="contentState">
+            <div class="googsList" v-if="contentState" >
                 <dl>
                     <dt>
                         <input type="checkbox">
@@ -18,49 +18,7 @@
                                         <span>￥32.80</span>
                                         <div class="num">
                                             <button>-</button>
-                                            <input type="text">
-                                            <button>+</button>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </dd>
-
-
-                    <dd>
-                        <ul>
-                            <li class="li1"><input type="checkbox"></li>
-                            <li class="li2"><img src="../../assets/10_06124375466059094_240 (1).jpg"></li>
-                            <li class="li3">
-                                <ul>
-                                    <li class="liA"><span>攀枝花新鲜大贵妃芒紫芒果 新鲜当季青水果带箱5斤爱文吉禄包邮</span><a class="iconfont">&#xe65d;</a></li>
-                                    <li class="liB">
-                                        <span>￥32.80</span>
-                                        <div class="num">
-                                            <button>-</button>
-                                            <input type="text">
-                                            <button>+</button>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </dd>
-
-
-                    <dd>
-                        <ul>
-                            <li class="li1"><input type="checkbox"></li>
-                            <li class="li2"><img src="../../assets/10_06124375466059094_240 (1).jpg"></li>
-                            <li class="li3">
-                                <ul>
-                                    <li class="liA"><span>攀枝花新鲜大贵妃芒紫芒果 新鲜当季青水果带箱5斤爱文吉禄包邮</span><a class="iconfont">&#xe65d;</a></li>
-                                    <li class="liB">
-                                        <span>￥32.80</span>
-                                        <div class="num">
-                                            <button>-</button>
-                                            <input type="text">
+                                            <button>22</button>
                                             <button>+</button>
                                         </div>
                                     </li>
@@ -80,12 +38,22 @@
 </template>
 
 <script>
+
+    import Vuex from "vuex";
+
+
     export default {
         data(){
             return {
                 contentState: true
             }
-        }
+        },
+        name:"shopCarContent",
+        computed: {
+            ...Vuex.mapState({
+                goodsList:state=>state.car.goodsList
+            })
+        },
     }
 </script>
 
@@ -115,10 +83,18 @@
     div>.content>.googsList>dl>dt{
         text-align: left;
         line-height: 0.8rem;
+        height: 0.8rem;
         border-top: 1px solid rgb(216, 214, 214);
         background-color: white;
         &>input{
             margin:0 0.2rem;
+            vertical-align: middle;
+            width: 0.3rem;
+            height: 0.3rem;
+        }
+        &>span{
+            font-size: 0.25rem;
+            vertical-align: middle;
         }
     }
 
@@ -130,8 +106,14 @@
             display: flex;
             &>.li1{
                 text-align: left;
-                line-height: 1.7rem;
                 margin: 0 0.3rem;
+                height: 1.7rem;
+                line-height: 1.7rem;
+                &>input{
+                    width: 0.3rem;
+                    height: 0.3rem;
+                    vertical-align: middle;
+                }
             }
             &>.li2{
                 margin-top: 0.25rem;
@@ -156,27 +138,28 @@
                     }
                     &>a{
                         text-align: right;
-                        padding: 0.3rem;
+                        padding: 0.2rem 0;
+                        font-size: 0.4rem;
                     }
                 }
                 &>.liB{
+                    height: 0.85rem;
+                    line-height: 0.85rem;
                     display: flex;
                     &>span{
                         flex: 1;
                         text-align: left;
-                        margin: 0.2rem;
                     }
                     &>.num{
                         flex: 1;
                         text-align: right;
-                        margin: 0.2rem;
-                        height: 0.22rem;
-                        &>input{
-                            width: 0.2rem;
-                            height: 100%;
-                            border-top: 0.1px black solid;
-                            border-bottom: 0.1px black solid;
+                        &>button{
+                            width: 0.5rem;
+                            height: 0.5rem;
+                            vertical-align: middle;
+                            font-size: 0.25rem;
                         }
+                        
                     }
                 }
             }

@@ -13,15 +13,9 @@
 
 <script>
 import Vuex from 'vuex'
-import index from "@api/index"
 export default {
     name: "Index",
     created() {
-        // async function fun(){
-        //     let data = await index.indexData()
-        //     console.log(data)
-        // }
-        // fun()
         this.$store.dispatch("index/acGetIndexData")
     },
     computed: {

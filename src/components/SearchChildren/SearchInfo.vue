@@ -8,6 +8,7 @@
             <dt>历史记录</dt>
             <router-link tag="dd" v-for="(item,index) in historyList" :to="{name: 'searchlist', query: {keyword: item}}" :key="index">{{item}}</router-link>
         </dl>
+        <a class="historyBtn" href="javascipt: void(0)" @click="clearHistory">清除历史</a>
     </div>
 </template>
 
@@ -19,6 +20,11 @@ export default {
         ...Vuex.mapState({
             infoList: state => state.search.infoList,
             historyList: state => state.search.historyList
+        })
+    },
+    methods: {
+        ...Vuex.mapMutations({
+            clearHistory: "search/muClearHistory"
         })
     },
 }
@@ -45,4 +51,13 @@ export default {
         border-radius: 25%
         background: #fff
         font-size: .25rem
+    .historyBtn
+        display: block
+        width: 80%
+        margin: 0 auto
+        height: 1rem
+        line-height: 1rem
+        font-size: .3rem
+        background: #ddd
+        color: #333
 </style>
