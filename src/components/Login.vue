@@ -28,7 +28,7 @@
 </template>
 
 <script>
-// import login from "@api/login"
+import login from "@api/login"
 export default {
     created() {
         
@@ -47,10 +47,14 @@ export default {
         };
     },
     methods: {
-        lilo() {
-
+        async lilo() {
+            let flag = await login.login(this.inpname, this.inppwd)
+            if(flag) {
+                document.cookie = "tk="+flag.data.data.tk;
+                this.$router.push("/")
+            }
         },
-         gouf(){
+        gouf(){
             if(this.gou === ''){
                 this.gou = '✔'
                 this.classNameg = ['gou', 'gousuc']

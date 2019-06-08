@@ -28,11 +28,12 @@
             <v-touch class="tongyi" tag="span" v-on:tap="gouf">同意</v-touch>
             <span class="userReg">用户注册协议</span>
         </div>
-        <div class="regl">注册</div>
+        <v-touch class="regl" @tap="doRegister">注册</v-touch>
     </div>
 </template>
 
 <script>
+import login from '@api/login'
 export default {
     data() {
         return {
@@ -50,6 +51,10 @@ export default {
         };
     },
     methods: {
+        async doRegister(){
+            let flag = await login.register(this.username, this.pwd)
+            console.log(flag)
+        },
         gouf(){
             if(this.gou === ''){
                 this.gou = '✔'
