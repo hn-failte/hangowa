@@ -13,13 +13,12 @@
 import Vuex from "vuex";
 import "swiper/dist/css/swiper.css";
 
-import { swiper, swiperSlide } from "vue-awesome-swiper";
+import { swiper } from "vue-awesome-swiper";
 
 export default {
   name: "IndexLunbo",
   components: {
-    swiper,
-    swiperSlide
+    swiper
   },
   computed: {
     ...Vuex.mapState({

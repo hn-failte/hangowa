@@ -5,5 +5,8 @@ export default {
     store_info: {},
     goods_evaluate_info: {},
     goods_commend_list: [],
-    lodingAnimRun: true
+    lodingAnimRun: true,
+    chooseGoods: false,
+    choosePlace: false,
+    timer: null
 }

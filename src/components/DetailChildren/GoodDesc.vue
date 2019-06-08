@@ -3,9 +3,9 @@
         <h3>{{goods_info.goods_name}}</h3>
         <h4>{{goods_info.goods_jingle}}</h4>
         <h5><i>￥{{goods_info.goods_promotion_price}}</i><em>销量：{{goods_info.goods_salenum}}</em></h5>
-        <h6 style="background:" @click="popupRightToggle">送至<i>{{goods_hair_info.area_name}}</i><em>{{goods_hair_info.if_store_cn}}</em></h6>
+        <h6 style="background:" @click="toggleRightPopup(true)">送至<i>{{goods_hair_info.area_name}}</i><em>{{goods_hair_info.if_store_cn}}</em></h6>
         <p class="postFee">{{goods_hair_info.content}}</p>
-        <p class="selected" @click="popupBottomToggle"><span>已选</span><i>默认</i></p>
+        <p class="selected" @click="toggleBottomPopup(true)"><span>已选</span><i>默认</i></p>
         <a class="this-shop" :href="'http://www.hangowa.com/wap/tmpl/store.html?store_id=10'+store_info.store_id">
             <h5>{{store_info.store_name}}</h5>
             <ul>
@@ -35,12 +35,6 @@
             </router-link>
         </dl>
         <div class="moreDetail">点击查看商品详情</div>
-        <mt-popup v-model="popupRight" position="right" modal="true" closeOnClickModal="true">
-            <a href="javascript: void(0);" @click="popupRightToggle">返回</a>
-        </mt-popup>
-        <mt-popup v-model="popupBottom" position="bottom" modal="true" closeOnClickModal="true">
-            asjcnjsnj
-        </mt-popup>
     </article>
 </template>
 
@@ -48,12 +42,6 @@
 import Vuex from 'vuex'
 export default {
     name: "GoodDesc",
-    data(){
-        return {
-            popupRight: false,
-            popupBottom: false
-        }
-    },
     computed: {
         ...Vuex.mapState({
             imgList: state=>state.detail.imgList,
@@ -61,17 +49,17 @@ export default {
             goods_info: state=>state.detail.goods_info,
             store_info: state=>state.detail.store_info,
             goods_evaluate_info: state=>state.detail.goods_evaluate_info,
-            goods_commend_list: state=>state.detail.goods_commend_list
+            goods_commend_list: state=>state.detail.goods_commend_list,
         })
     },
     methods: {
-        popupRightToggle(){
-            this.popupRight = !this.popupRight;
-        },
-        popupBottomToggle(){
-            this.popupBottom = !this.popupBottom;
-        }
-    }
+        ...Vuex.mapMutations({
+            toggleBottomPopup: "detail/muToggleBottomPopup"
+        }),
+        ...Vuex.mapActions({
+            toggleRightPopup: "detail/acToggleRightPopup"
+        })
+    },
 }
 </script>
 
@@ -251,18 +239,6 @@ article{
         line-height: 1rem;
         color: #999;
         font-size: .3rem;
-    }
-
-
-
-    .mint-popup-right{
-        background: #fff;
-        width: 100%;
-        height: 10rem;
-    }
-    .mint-popup-bottom{
-        width: 100%;
-        height: 4rem
     }
 }
 </style>
