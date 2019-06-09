@@ -53,7 +53,13 @@ export default {
     methods: {
         async doRegister(){
             let flag = await login.register(this.username, this.pwd)
-            console.log(flag)
+            if(flag.data.errCode==0){
+                alert("注册成功")
+                this.$router.push("/login")
+            }
+            else{
+                alert("注册失败")
+            }
         },
         gouf(){
             if(this.gou === ''){

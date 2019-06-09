@@ -8,7 +8,7 @@
                 </div>
                 <div class="login">
                     <router-link to="./login" class="iconfont icon-wo" tag='span'></router-link>
-                    <router-link to="./login" class="loginDij" tag='span'>点击登录</router-link>
+                    <router-link to="./login" class="loginDij" tag='span'>{{userName}}</router-link>
                 </div>
                 <div class="collection">
                     <li>
@@ -119,9 +119,9 @@
 <script>
 // import bscroll from 'better-scroll'
 export default {
-    data(){
-        return {
-
+    computed: {
+        userName(){
+            return localStorage.getItem("name") || "点击登录";
         }
     },
     // beforeRouteEnter(to, from, next){

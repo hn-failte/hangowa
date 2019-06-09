@@ -25,8 +25,10 @@ router.post('/login', function (req, res, next) { //登录
     return;
   }
   mongo.getUser(obj.name, (err, data) => {
+    console.log("login successed", obj.name, obj.pwd)
     if (!err) {
       if (obj.pwd === data.pwd) { //登录成功
+        console.log("login successed")
         var token = jwt.sign({
             "name": req.query.name
           },

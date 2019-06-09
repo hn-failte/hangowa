@@ -17,10 +17,6 @@ export default new Router({
     ...login,
     ...shopcar,
     {
-      path: "/test",
-      component: ()=>import("@components/test.vue")
-    },
-    {
       path: "**",
       redirect: "index" //错误路径重定向到主页
     }
