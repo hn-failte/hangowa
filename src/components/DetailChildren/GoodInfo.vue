@@ -1,7 +1,7 @@
 <template>
   <div class="good-header">
     <swiper :options="swiperOption" ref="mySwiper">
-      <img v-for="(item, index) in imgList" class="swiper-slide" v-lazy="item" :key="index">
+      <img v-for="(item, index) in imgList" class="swiper-slide" :src="item" :key="index">
       <div class="swiper-pagination" slot="pagination"></div>
       <a href="javascript: void(0);" class="iconfont favorate">&#xe654;</a>
     </swiper>
@@ -79,11 +79,14 @@ export default {
     position: relative;
     z-index: -3;
     width: 100%;
+    height: 8rem;
     .swiper-wrapper {
       z-index: -2;
+      height: 8rem;
       .swiper-slide {
         z-index: -1;
         width: 100%;
+        height: 8rem;
       }
       .favorate{
         position: absolute;

@@ -40,7 +40,7 @@ export default {
         return axios({
             method: 'post',
             url,
-            data: data,
+            data,
             timeout: 10000,
             headers: {
                 'X-Requested-With': 'XMLHttpRequest',

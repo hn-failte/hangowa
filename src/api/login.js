@@ -1,37 +1,12 @@
-import axios from "axios"
+import Http from "@utils/http"
 
 export default {
-    query(){ //登录
-        return axios({
-            method: "get",
-            url: "http://localhost:3000/users?name=xi&pwd=xixi",
-        })
+    login: (name, pwd)=>{ //登录
+        // return Http.post("http://localhost:3000/users/login", "name="+name+"&pwd="+pwd) //测试服务器
+        return Http.post("http://47.112.216.148:3000/users/login", "name="+name+"&pwd="+pwd) //正式服务器
     },
-    register(){ //注册
-        return axios({
-            method: "post",
-            url: "http://localhost:3000/users",
-            data: {
-                name: "xi",
-                pwd:"xixi"
-            }
-        })
-    },
-    delete(id="1"){ //删除用户
-        return axios({
-            method: "delete",
-            url: "http://localhost:3000/users/"+id
-        })
-    },
-    // update(id="9", obj={name: "asd"}){ //修改用户
-    //     return axios({
-    //         method: "patch",
-    //         url: "http://localhost:3000/users/"+id,
-    //         data: obj
-    //     })
-    // }
+    register: (name, pwd)=>{ //注册
+        // return Http.post("http://localhost:3000/users/register", "name="+name+"&pwd="+pwd) //测试服务器
+        return Http.post("http://47.112.216.148:3000/users/register", "name="+name+"&pwd="+pwd) //正式服务器
+    }
 }
-
-// Http({
-
-// })

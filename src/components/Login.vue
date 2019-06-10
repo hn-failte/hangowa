@@ -28,10 +28,10 @@
 </template>
 
 <script>
-// import login from "@api/login"
+import login from "@api/login"
 export default {
     created() {
-        
+        localStorage.removeItem("name");
     },
     data() {
         return {
@@ -47,10 +47,18 @@ export default {
         };
     },
     methods: {
-        lilo() {
-
+        async lilo() {
+            let flag = await login.login(this.inpname, this.inppwd)
+            if(flag.data.errCode==0) {
+                document.cookie = `tk=${flag.data.data.tk};expires=${20*60*1000}`;
+                localStorage.setItem("name", this.inpname)
+                this.$router.push("/")
+            }
+            else{
+                alert("用户名或密码错误")
+            }
         },
-         gouf(){
+        gouf(){
             if(this.gou === ''){
                 this.gou = '✔'
                 this.classNameg = ['gou', 'gousuc']

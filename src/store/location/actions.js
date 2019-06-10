@@ -1,8 +1,8 @@
 import {getProvinces} from '@api/location'
 
 export default {
-    async acGetProvinces({commit}){
-        let data = await getProvinces();
-        commit("muGetProvinces", data)
+    async acGetProvinces({commit},id){
+        let data = await getProvinces(id);
+        commit("muGetProvinces", [id,data])
     }
 }
