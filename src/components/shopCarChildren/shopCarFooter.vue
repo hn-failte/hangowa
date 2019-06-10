@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul>
-            <li class="li1"><input type="checkbox"></li>
+            <li class="li1"><input type="checkbox" checked="allSelected"></li>
             <li class="li2">合计总金额：<span>￥400.50</span></li>
             <li class="li3"><button>确认信息</button></li>
         </ul>
@@ -11,8 +11,14 @@
 
 
 <script>
+    import Vuex from "vuex";
     export default {
-
+        name:"shopCarFooter",
+        computed: {
+            ...Vuex.mapState({
+                allSelected:state=>state.car.allSelected
+            }),
+        },
     }
 </script>
 

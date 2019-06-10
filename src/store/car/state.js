@@ -1,3 +1,4 @@
 export default {
-    goodslist:[]
+    goodsList:[],
+    allSelected:true
 }

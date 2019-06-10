@@ -4,18 +4,18 @@
             <div class="googsList" v-if="contentState" >
                 <dl>
                     <dt>
-                        <input type="checkbox">
+                        <input type="checkbox" checked="allSelected" @change="handleToggle()">
                         <span class="iconfont icon-shangcheng">&nbsp;&nbsp;&nbsp;荆门众邦特色馆</span>
                     </dt>
-                    <dd>
+                    <dd v-for="(item,index) in goodsList" :key="index">
                         <ul>
-                            <li class="li1"><input type="checkbox"></li>
+                            <li class="li1"><input type="checkbox" :checked="item.flag" @change="handleGoodsToggle(index)"></li>
                             <li class="li2"><img src="../../assets/10_06124375466059094_240 (1).jpg"></li>
                             <li class="li3">
                                 <ul>
-                                    <li class="liA"><span>攀枝花新鲜大贵妃芒紫芒果 新鲜当季青水果带箱5斤爱文吉禄包邮</span><a class="iconfont">&#xe65d;</a></li>
+                                    <li class="liA"><span>{{item.name}}</span><a class="iconfont">&#xe65d;</a></li>
                                     <li class="liB">
-                                        <span>￥32.80</span>
+                                        <span>{{item.price}}</span>
                                         <div class="num">
                                             <button>-</button>
                                             <button>22</button>
@@ -26,6 +26,7 @@
                             </li>
                         </ul>
                     </dd>
+
                 </dl>
             </div>
             <div class="noGoogs" v-else>
@@ -51,9 +52,16 @@
         name:"shopCarContent",
         computed: {
             ...Vuex.mapState({
-                goodsList:state=>state.car.goodsList
-            })
+                goodsList:state=>state.car.goodsList,
+                allSelected:state=>state.car.allSelected
+            }),
         },
+        methods:{
+            ...Vuex.mapMutations({
+                handleToggle:"car/handleToggle",
+                handleGoodsToggle:"car/handleGoodsToggle"
+            })
+        }
     }
 </script>
 
@@ -106,7 +114,7 @@
             display: flex;
             &>.li1{
                 text-align: left;
-                margin: 0 0.3rem;
+                padding: 0 0.3rem;
                 height: 1.7rem;
                 line-height: 1.7rem;
                 &>input{
@@ -129,17 +137,20 @@
                 }
             }
             &>.li3>ul{
+                width: 5rem;
                 &>.liA{
                     height: 0.85rem;
                     display: flex;
+                    position: relative;
                     &>span{
                         text-align: left;
                         padding: 0.2rem;
                     }
                     &>a{
-                        text-align: right;
-                        padding: 0.2rem 0;
                         font-size: 0.4rem;
+                        position: absolute;
+                        left: 4.5rem;
+                        top: .2rem;
                     }
                 }
                 &>.liB{
@@ -149,6 +160,7 @@
                     &>span{
                         flex: 1;
                         text-align: left;
+                        margin-left: .3rem;
                     }
                     &>.num{
                         flex: 1;
