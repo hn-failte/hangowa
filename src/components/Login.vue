@@ -50,7 +50,6 @@ export default {
         async lilo() {
             let flag = await login.login(this.inpname, this.inppwd)
             if(flag.data.errCode==0) {
-                document.cookie = `tk=${flag.data.data.tk};expires=${20*60*1000}`;
                 localStorage.setItem("name", this.inpname)
                 this.$router.push("/")
             }

@@ -48,7 +48,7 @@ router.post('/login', function (req, res, next) { //登录
         res.json({
           errCode: 0,
           msg: "ok",
-          data: {tk: token}
+          data: {}
         })
       } else //密码错误
         res.json({

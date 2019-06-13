@@ -21,5 +21,6 @@ module.exports = {
                 "@common":path.resolve(__dirname, "./src/common")
             }
         }
-    }
+    },
+    productionSourceMap: false
 }

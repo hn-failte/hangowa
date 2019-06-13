@@ -42,6 +42,7 @@ export default {
             url,
             data,
             timeout: 10000,
+            withCredentials: true,
             headers: {
                 'X-Requested-With': 'XMLHttpRequest',
                 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
